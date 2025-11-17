@@ -1,4 +1,7 @@
 # Unaligned RGBT Tracking Project
+<p align="center">
+  <img src="A_cover_design_graphic_features_the_title_\"unaligned_rgbt_tracking.png" width="100%">
+</p>
 
 This repository contains multiple research modules related to **multi-modal tracking**, **RGB–TIR fusion**, and **unaligned cross-modal UAV tracking**.  
 Among them, our recent work:
