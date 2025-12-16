@@ -13,7 +13,7 @@ This repository includes more than this single paper, but LUART and SFCATrack ar
 
 ---
 
-## 🌟 News
+## 🔔 News
 - **2025.11** – Our unaligned UAV RGBT tracking paper is accepted by **AAAI 2026**.  
 - **2025.11** – LUART (1.02M dual-modality frames) dataset is available for download.  
 - Additional modules and trackers will be released soon.
@@ -33,35 +33,56 @@ It includes:
   - RGB: **1920×1080**  
   - TIR: **640×512**
 
-### 📥 Download
+### 📥 Download Links
 
-**Baidu Cloud**  
-🔗 https://pan.baidu.com/s/168vWYtxPqoagds8WcPuJUA  
-🔑 Code: `er4r`
+**LUART Dataset**  
+- Baidu Cloud:  
+  https://pan.baidu.com/s/168vWYtxPqoagds8WcPuJUA  
+- Access Code: `er4r`
 
 **Evaluation Toolkit**  
-🔗 https://pan.baidu.com/s/1lv0IBj6UtxZhj1S1UNMPsQ  
-🔑 Code: `t1vv`
+- Baidu Cloud:  
+  https://pan.baidu.com/s/1lv0IBj6UtxZhj1S1UNMPsQ  
+- Access Code: `t1vv`
 
-## 📦 LasHeR-Unaligned Dataset [LasHeR](https://github.com/BUGPLEASEOUT/LasHeR)
+## 📦 LasHeR-Unaligned
+
+We also provide **LasHeR-Unaligned**, a derived benchmark based on  
+[LasHeR](https://github.com/BUGPLEASEOUT/LasHeR), where spatial alignment assumptions are explicitly removed to support fair evaluation of unaligned RGBT trackers.
+
+---
+## 📊 Benchmark Results
+
+### ⭐ LUART (Test Set)
+
+| Tracker | PR ↑ | NPR ↑ | SR ↑ |
+|--------|------|-------|------|
+| Best previous method | 54.7 | 49.6 | 42.6 |
+| **SFCATrack (Ours)** | **57.3** | **51.9** | **44.6** |
 
 ---
 
-## 📈 Benchmark Results
-
-### ⭐ LUART (Test Set, retrained all methods)
-| Tracker | PR ↑ | NPR ↑ | SR ↑ |
-|--------|------|-------|------|
-| Best previous | 54.7 | 49.6 | 42.6 |
-| **SFCATrack (Ours)** | **57.3** | **51.9** | **44.6** |
-
 ### ⭐ LasHeR-Unaligned
+
 | Tracker | PR ↑ | NPR ↑ | SR ↑ |
 |--------|------|-------|------|
-| Best previous | 58.7 | 54.0 | 46.9 |
+| Best previous method | 58.7 | 54.0 | 46.9 |
 | **SFCATrack (Ours)** | **60.7** | **55.1** | **47.9** |
 
-SFCATrack achieves new state-of-the-art results on two major unaligned RGBT benchmarks.
+---
 
-## 📈 Open Source Code
- **SFCATrack** https://github.com/Yhw-lol127/SFCATrack
+## 💻 Open-source Tracker
+
+### SFCATrack
+Official implementation of our AAAI 2026 method:
+
+🔗 https://github.com/Yhw-lol127/SFCATrack
+
+---
+
+## 📚 Citation
+
+If you find this repository or the LUART dataset useful for your research,  
+please consider citing our AAAI 2026 paper:
+
+```bibtex
