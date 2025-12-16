@@ -23,10 +23,10 @@ This repository includes more than this single paper, but LUART and SFCATrack ar
 ## 📢 Public Release
 
 In **December 2025**, we publicly released:
-- the [**AAAI 2026 paper**](https://github.com/NOP1224/Unaligned_RGBT_Tracking/blob/main/Unaligned_UAV_RGBT_Tracking__A_Largescale_Benchmark_and_A_Novel_Approach_AAAI_CRC.pdf),
-- the [**official implementation**](https://github.com/Yhw-lol127/SFCATrack),
-- the **LUART dataset**, and
-- the **evaluation toolkit**
+- [**AAAI 2026 paper**](https://github.com/NOP1224/Unaligned_RGBT_Tracking/blob/main/Unaligned_UAV_RGBT_Tracking__A_Largescale_Benchmark_and_A_Novel_Approach_AAAI_CRC.pdf),
+- [**SFCATrack**](https://github.com/Yhw-lol127/SFCATrack),
+- [**LUART dataset**](https://github.com/NOP1224/Unaligned_RGBT_Tracking/blob/main/README.md#-download-links)
+- [**LUART evaluation toolkit**](https://github.com/NOP1224/Unaligned_RGBT_Tracking/blob/main/README.md#-download-links)
 
 to support reproducibility and future research on unaligned RGBT tracking.
 
