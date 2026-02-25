@@ -25,7 +25,7 @@ This repository includes more than this single paper, but LUART and SFCATrack ar
 ---
 
 ## 📢 Public Release
-- **2025.12**, we will release the **PMATrack(CVPR 2026)**
+- **2026.02**, we will release the **PMATrack(CVPR 2026)**
 - **2025.12**, we publicly released:
 - [**AAAI 2026 paper**](https://github.com/NOP1224/Unaligned_RGBT_Tracking/blob/main/Unaligned_UAV_RGBT_Tracking__A_Largescale_Benchmark_and_A_Novel_Approach_AAAI_CRC.pdf),
 - [**SFCATrack**](https://github.com/Yhw-lol127/SFCATrack),
