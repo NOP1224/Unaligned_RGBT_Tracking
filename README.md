@@ -6,6 +6,9 @@
 This repository contains multiple research modules related to **multi-modal tracking**, **RGB–TIR fusion**, and **unaligned cross-modal UAV tracking**.  
 Among them, our recent work:
 
+> **“Progressive Multi-cue Alignment for Unaligned RGBT Tracking”**  
+> has been **accepted by CVPR 2026** 🎉.
+> 
 > **“Unaligned UAV RGBT Tracking: A Largescale Benchmark and A Novel Approach”**  
 > has been **accepted by AAAI 2026** 🎉.
 
