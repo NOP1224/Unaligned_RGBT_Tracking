@@ -14,15 +14,16 @@ This repository includes more than this single paper, but LUART and SFCATrack ar
 ---
 
 ## 🔔 News
-- **2025.11** – Our unaligned UAV RGBT tracking paper is accepted by **AAAI 2026**.  
-- **2025.11** – LUART (1.02M dual-modality frames) dataset is available for download.  
+- **2026.02** – Our **Progressive Multi-cue Alignment for Unaligned RGBT Tracking** is accepted by **CVPR 2026**.  
+- **2025.11** – Our **Unaligned UAV RGBT Tracking: A Largescale Benchmark and A Novel Approach** is accepted by **AAAI 2026**.  
+- **2025.11** – **LUART** (1.02M dual-modality frames) dataset is available for download.  
 - Additional modules and trackers will be released soon.
 
 ---
 
 ## 📢 Public Release
-
-In **December 2025**, we publicly released:
+- **2025.12**, we will release the **PMATrack(CVPR 2026)**
+- **2025.12**, we publicly released:
 - [**AAAI 2026 paper**](https://github.com/NOP1224/Unaligned_RGBT_Tracking/blob/main/Unaligned_UAV_RGBT_Tracking__A_Largescale_Benchmark_and_A_Novel_Approach_AAAI_CRC.pdf),
 - [**SFCATrack**](https://github.com/Yhw-lol127/SFCATrack),
 - [**LUART dataset**](https://github.com/NOP1224/Unaligned_RGBT_Tracking/blob/main/README.md#-download-links)
@@ -31,6 +32,9 @@ In **December 2025**, we publicly released:
 to support reproducibility and future research on unaligned RGBT tracking.
 
 ---
+
+## 📦 MUART244 Dataset (Multi-platform Unaligned RGBT Tracking)
+To be coming soon....
 
 ## 📦 LUART Dataset (Unaligned UAV RGBT Tracking)
 
