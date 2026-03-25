@@ -1,7 +1,19 @@
-# Unaligned RGBT Tracking Project
+<h1 align="center">
+<span>Unaligned RGBT Tracking Project
+</span>
+</h1>
+
+<div align="center">
+  
 <p align="center">
   <img src="logo.png" width="100%">
 </p>
+
+[![PDF](https://img.shields.io/badge/AAAI26Paper-SFCATrack-orange?logoSize=auto)](https://ojs.aaai.org/index.php/AAAI/article/view/38079/42041)
+[![Code](https://img.shields.io/badge/Code-SFCATrack-yellow?logoSize=auto)](https://github.com/Yhw-lol127/SFCATrack)
+[![Dataset](https://img.shields.io/badge/Dataset-LUART-red?logoSize=auto)](https://github.com/NOP1224/Unaligned_RGBT_Tracking/blob/main/README.md#-download-links)
+
+</div>
 
 This repository contains multiple research modules related to **multi-modal tracking**, **RGB–TIR fusion**, and **unaligned cross-modal UAV tracking**.  
 Among them, our recent work:
