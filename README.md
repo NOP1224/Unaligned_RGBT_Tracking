@@ -95,10 +95,32 @@ We also provide **LasHeR-Unaligned**, a derived benchmark based on
 
 ### ⭐ LasHeR-Unaligned
 
-| Tracker | PR ↑ | NPR ↑ | SR ↑ |
-|--------|------|-------|------|
-| Best previous method | 58.7 | 54.0 | 46.9 |
-| **SFCATrack (Ours)** | **60.7** | **55.1** | **47.9** |
+| Tracker       | Publication   | PR ↑     | NPR ↑    | SR ↑     |
+| ------------- | ------------- | -------- | -------- | -------- |
+| MANet         | ICCVW 2019    | 32.9     | 26.6     | 24.1     |
+| MaCNet        | Sensors 2020  | 38.4     | 30.7     | 27.0     |
+| CAT           | ECCV 2020     | 36.3     | 29.9     | 25.3     |
+| FANet         | TIV 2021      | 32.8     | 26.6     | 22.7     |
+| ADRNet        | IJCV 2021     | 34.5     | 29.2     | 23.8     |
+| MANet++       | TIP 2021      | 30.1     | 23.9     | 20.3     |
+| APFNet        | AAAI 2022     | 40.3     | 32.4     | 29.1     |
+| DMCNet        | TNNLS 2022    | 35.1     | 27.7     | 25.7     |
+| ToMP          | CVPR 2022     | 46.3     | 41.4     | 36.0     |
+| OSTrack       | ECCV 2022     | 59.2     | 53.8     | 46.7     |
+| TBSI          | CVPR 2023     | 60.3     | 55.2     | 47.7     |
+| ViPT          | CVPR 2023     | 55.2     | 51.1     | 44.2     |
+| SDSTrack      | CVPR 2024     | 57.6     | 52.5     | 45.3     |
+| UnTrack       | CVPR 2024     | 56.5     | 51.5     | 44.7     |
+| BAT           | AAAI 2024     | 60.5     | 55.1     | 47.7     |
+| AFter         | TIP 2025      | 57.5     | 52.3     | 44.8     |
+| SUTrack       | AAAI 2025     | 57.4     | 52.5     | 45.0     |
+| CAFormer      | AAAI 2025     | 59.0     | 53.8     | 46.7     |
+| AINet         | AAAI 2025     | 61.4     | 55.7     | 48.3     |
+| NAT           | CISE 2024     | 58.1     | 52.3     | 44.8     |
+| ------------- | ------------- | -------- | -------- | -------- |
+| **SFCATrack** | **AAAI 2026** | **60.7** | **55.1** | **47.9** |
+| **PMATrack**      | **CVPR 2026** | **64.4** | **58.7** | **50.6** |
+
 
 ---
 
