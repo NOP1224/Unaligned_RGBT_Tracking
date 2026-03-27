@@ -137,4 +137,14 @@ Official implementation of our AAAI 2026 method:
 If you find this repository or the LUART dataset useful for your research,  
 please consider citing our AAAI 2026 paper:
 
-```bibtex
+```
+@inproceedings{xiao2026unaligned,
+  title={Unaligned UAV RGBT Tracking: A Largescale Benchmark and a Novel Approach},
+  author={Xiao, Yun and Wang, Yuhang and Jin, Jiandong and Zhang, Wankang and Li, Chenglong},
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume={40},
+  number={13},
+  pages={11014--11022},
+  year={2026}
+}
+```
