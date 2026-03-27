@@ -116,8 +116,7 @@ We also provide **LasHeR-Unaligned**, a derived benchmark based on
 | SUTrack       | AAAI 2025     | 57.4     | 52.5     | 45.0     |
 | CAFormer      | AAAI 2025     | 59.0     | 53.8     | 46.7     |
 | AINet         | AAAI 2025     | 61.4     | 55.7     | 48.3     |
-| NAT           | CISE 2024     | 58.1     | 52.3     | 44.8     |
-| ------------- | ------------- | -------- | -------- | -------- |
+| NAT           | CISE 2024     | 58.1     | 52.3     | 44.8     ||
 | **SFCATrack** | **AAAI 2026** | **60.7** | **55.1** | **47.9** |
 | **PMATrack**      | **CVPR 2026** | **64.4** | **58.7** | **50.6** |
 
