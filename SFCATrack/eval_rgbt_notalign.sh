@@ -1,0 +1,1 @@
+python ./RGBT_workspace/test_rgbt_mgpus_notalign.py --script_name sfcatrack --dataset_name LUART --yaml_name rgbt --debug 0 --threads 1 

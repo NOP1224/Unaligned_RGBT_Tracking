@@ -1,0 +1,1 @@
+CUDA_VISIBLE_DEVICES=5 python tracking/train.py --script sfcatrack --config rgbt --save_dir ./output --mode single --nproc_per_node 1
