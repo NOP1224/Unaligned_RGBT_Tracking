@@ -9,12 +9,6 @@
   <img src="logo.png" width="100%">
 </p>
 
-[![PDF](https://img.shields.io/badge/AAAI26Paper-SFCATrack-orange?logoSize=auto)](https://ojs.aaai.org/index.php/AAAI/article/view/38079/42041)
-[![Code](https://img.shields.io/badge/Code-SFCATrack-yellow?logoSize=auto)](https://github.com/Yhw-lol127/SFCATrack)
-[![Dataset](https://img.shields.io/badge/Dataset-LUART-red?logoSize=auto)](https://github.com/NOP1224/Unaligned_RGBT_Tracking/blob/main/README.md#-download-links)
-
-</div>
-
 <div align="center">
 
 ### 🔗 Quick Navigation
