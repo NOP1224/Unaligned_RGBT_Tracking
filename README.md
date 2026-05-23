@@ -37,31 +37,68 @@ This repository includes more than this single paper, but LUART and SFCATrack ar
 ---
 
 ## 📢 Public Release
-- **2026.02**, we will release the **PMATrack(CVPR 2026)**
-- **2025.12**, we publicly released:
-- [**AAAI 2026 paper**](https://github.com/NOP1224/Unaligned_RGBT_Tracking/blob/main/Unaligned_UAV_RGBT_Tracking__A_Largescale_Benchmark_and_A_Novel_Approach_AAAI_CRC.pdf),
-- [**SFCATrack**](https://github.com/Yhw-lol127/SFCATrack),
-- [**LUART dataset**](https://github.com/NOP1224/Unaligned_RGBT_Tracking/blob/main/README.md#-download-links)
-- [**LUART evaluation toolkit**](https://github.com/NOP1224/Unaligned_RGBT_Tracking/blob/main/README.md#-download-links)
 
-to support reproducibility and future research on unaligned RGBT tracking.
+We will progressively release the following resources to support reproducible research on unaligned RGBT tracking:
+
+- **PMATrack code** for our CVPR 2026 paper  
+  **Progressive Multi-cue Alignment for Unaligned RGBT Tracking**
+- **MUART244 dataset** and corresponding tracking result files
+- **LasHeR-Unaligned result files**
+- **Unified evaluation toolkit** for unaligned RGBT tracking, built upon the standard RGBT evaluation protocol
+- Existing released resources:
+  - [**AAAI 2026 paper**](https://github.com/NOP1224/Unaligned_RGBT_Tracking/blob/main/Unaligned_UAV_RGBT_Tracking__A_Largescale_Benchmark_and_A_Novel_Approach_AAAI_CRC.pdf)
+  - [**SFCATrack**](https://github.com/Yhw-lol127/SFCATrack)
+  - [**LUART dataset**](https://github.com/NOP1224/Unaligned_RGBT_Tracking/blob/main/README.md#-download-links)
+  - [**LUART evaluation toolkit**](https://github.com/NOP1224/Unaligned_RGBT_Tracking/blob/main/README.md#-download-links)
 
 ---
 
-## 📦 MUART244 Dataset (Multi-platform Unaligned RGBT Tracking)
-To be coming soon....
+## 📦 MUART244 Dataset  
+### Multi-platform Unaligned RGBT Tracking Dataset
 
-## 📦 LUART Dataset (Unaligned UAV RGBT Tracking)
+**MUART244** is a high-quality multi-platform benchmark for unaligned RGBT tracking.  
+Different from existing aligned RGBT datasets, MUART244 preserves the original spatial misalignment between RGB and TIR modalities without manual pre-alignment, cropping, or rescaling.
+
+It includes:
+
+- **244** RGBT video pairs
+  - **143** ground-view sequences
+  - **101** aerial-view sequences
+- **205K** RGBT image pairs
+- Average **844** frames per video
+- **26** object categories
+- **22** challenge attributes
+- Precise dual-modal bounding-box annotations
+- Original heterogeneous resolutions:
+  - RGB: from **1600×1200** to **3840×2160**
+  - TIR: from **640×512** to **1280×1024**
+
+MUART244 provides a realistic benchmark for evaluating unaligned RGBT tracking under large spatial offsets, scale variations, multi-platform viewpoints, and modality-specific challenges.
+
+### 📥 Download Links
+
+**MUART244 Dataset**  
+- Baidu Cloud: `TODO`
+- Access Code: `TODO`
+
+**MUART244 Tracking Results**  
+- Baidu Cloud: `TODO`
+- Access Code: `TODO`
+
+---
+
+## 📦 LUART Dataset  
+### Unaligned UAV RGBT Tracking Dataset
 
 **LUART** is the first large-scale benchmark focusing on *unaligned* UAV visible–thermal tracking.  
 It includes:
 
-- **1,453** RGB–TIR sequence pairs  
-- **1.02M** dual-modality frames  
-- **42** object categories  
-- **22** challenge attributes  
-- Original UAV resolutions:  
-  - RGB: **1920×1080**  
+- **1,453** RGB–TIR sequence pairs
+- **1.02M** dual-modality frames
+- **42** object categories
+- **22** challenge attributes
+- Original UAV resolutions:
+  - RGB: **1920×1080**
   - TIR: **640×512**
 
 ### 📥 Download Links
@@ -71,57 +108,127 @@ It includes:
   https://pan.baidu.com/s/168vWYtxPqoagds8WcPuJUA  
 - Access Code: `er4r`
 
-**Evaluation Toolkit**  
-- Baidu Cloud:  
-  https://pan.baidu.com/s/1lv0IBj6UtxZhj1S1UNMPsQ  
-- Access Code: `t1vv`
+**LUART Tracking Results**  
+- Baidu Cloud: `TODO`
+- Access Code: `TODO`
+
+---
 
 ## 📦 LasHeR-Unaligned
 
 We also provide **LasHeR-Unaligned**, a derived benchmark based on  
 [LasHeR](https://github.com/BUGPLEASEOUT/LasHeR), where spatial alignment assumptions are explicitly removed to support fair evaluation of unaligned RGBT trackers.
 
+### 📥 Download Links
+
+**LasHeR-Unaligned Tracking Results**  
+- Baidu Cloud: `TODO`
+- Access Code: `TODO`
+
 ---
+
+## 🧪 Unified Evaluation Toolkit
+
+We will release a unified evaluation toolkit for unaligned RGBT tracking based on the standard RGBT evaluation library.
+
+The toolkit supports:
+
+- **MUART244**
+- **LasHeR-Unaligned**
+- **LUART**
+- One Pass Evaluation protocol
+- Precision Rate (**PR**)
+- Normalized Precision Rate (**NPR**)
+- Success Rate (**SR**)
+- Unified result format for fair comparison across different unaligned RGBT datasets
+
+**Evaluation Toolkit**  
+- Baidu Cloud: `TODO`
+- Access Code: `TODO`
+
+---
+
 ## 📊 Benchmark Results
 
-### ⭐ LUART (Test Set)
+### ⭐ Overall Comparison on MUART244 / LasHeR-Unaligned / LUART
 
-| Tracker | PR ↑ | NPR ↑ | SR ↑ |
-|--------|------|-------|------|
-| Best previous method | 54.7 | 49.6 | 42.6 |
-| **SFCATrack (Ours)** | **57.3** | **51.9** | **44.6** |
+| Tracker | Publication | MUART244 PR ↑ | MUART244 NPR ↑ | MUART244 SR ↑ | LasHeR-UA PR ↑ | LasHeR-UA NPR ↑ | LasHeR-UA SR ↑ | LUART PR ↑ | LUART NPR ↑ | LUART SR ↑ |
+|--------|-------------|---------------|----------------|---------------|----------------|-----------------|---------------|------------|-------------|------------|
+| OSTrack | ECCV 2022 | 45.6 | 40.4 | 33.5 | 59.2 | 53.8 | 46.7 | - | - | - |
+| TBSI | CVPR 2023 | 53.1 | 45.7 | 37.6 | 60.3 | 55.2 | 47.7 | - | - | - |
+| ViPT | CVPR 2023 | 53.4 | 47.7 | 39.7 | 55.2 | 51.1 | 44.2 | - | - | - |
+| SDSTrack | CVPR 2024 | 46.8 | 41.8 | 34.5 | 57.6 | 52.5 | 45.3 | - | - | - |
+| UnTrack | CVPR 2024 | 54.1 | 47.9 | 39.9 | 56.5 | 51.5 | 44.7 | - | - | - |
+| BAT | AAAI 2024 | 44.5 | 39.7 | 32.8 | 60.5 | 55.1 | 47.7 | - | - | - |
+| GMMT | AAAI 2024 | 51.0 | 44.1 | 36.2 | 58.4 | 53.3 | 45.7 | - | - | - |
+| AFter | TIP 2025 | 42.5 | 35.5 | 28.4 | 57.5 | 52.3 | 44.8 | - | - | - |
+| SUTrack | AAAI 2025 | 49.5 | 40.9 | 33.5 | 57.4 | 52.5 | 45.0 | - | - | - |
+| CAFormer | AAAI 2025 | 46.5 | 41.9 | 34.3 | 59.0 | 53.8 | 46.7 | - | - | - |
+| AINet | AAAI 2025 | 57.3 | 50.4 | 41.1 | 61.4 | 55.7 | 48.3 | - | - | - |
+| NAT | CISE 2024 | - | - | - | 58.1 | 52.3 | 44.8 | - | - | - |
+| **SFCATrack** | **AAAI 2026** | - | - | - | **60.7** | **55.1** | **47.9** | **57.3** | **51.9** | **44.6** |
+| **PMATrack** | **CVPR 2026** | **62.7** | **55.9** | **45.8** | **64.4** | **58.7** | **50.6** | - | - | - |
+
+---
+
+### ⭐ MUART244
+
+| Tracker | Publication | PR ↑ | NPR ↑ | SR ↑ |
+|--------|-------------|------|-------|------|
+| OSTrack | ECCV 2022 | 45.6 | 40.4 | 33.5 |
+| TBSI | CVPR 2023 | 53.1 | 45.7 | 37.6 |
+| ViPT | CVPR 2023 | 53.4 | 47.7 | 39.7 |
+| SDSTrack | CVPR 2024 | 46.8 | 41.8 | 34.5 |
+| UnTrack | CVPR 2024 | 54.1 | 47.9 | 39.9 |
+| BAT | AAAI 2024 | 44.5 | 39.7 | 32.8 |
+| GMMT | AAAI 2024 | 51.0 | 44.1 | 36.2 |
+| AFter | TIP 2025 | 42.5 | 35.5 | 28.4 |
+| SUTrack | AAAI 2025 | 49.5 | 40.9 | 33.5 |
+| CAFormer | AAAI 2025 | 46.5 | 41.9 | 34.3 |
+| AINet | AAAI 2025 | 57.3 | 50.4 | 41.1 |
+| **PMATrack** | **CVPR 2026** | **62.7** | **55.9** | **45.8** |
 
 ---
 
 ### ⭐ LasHeR-Unaligned
 
-| Tracker       | Publication   | PR ↑     | NPR ↑    | SR ↑     |
-| ------------- | ------------- | -------- | -------- | -------- |
-| MANet         | ICCVW 2019    | 32.9     | 26.6     | 24.1     |
-| MaCNet        | Sensors 2020  | 38.4     | 30.7     | 27.0     |
-| CAT           | ECCV 2020     | 36.3     | 29.9     | 25.3     |
-| FANet         | TIV 2021      | 32.8     | 26.6     | 22.7     |
-| ADRNet        | IJCV 2021     | 34.5     | 29.2     | 23.8     |
-| MANet++       | TIP 2021      | 30.1     | 23.9     | 20.3     |
-| APFNet        | AAAI 2022     | 40.3     | 32.4     | 29.1     |
-| DMCNet        | TNNLS 2022    | 35.1     | 27.7     | 25.7     |
-| ToMP          | CVPR 2022     | 46.3     | 41.4     | 36.0     |
-| OSTrack       | ECCV 2022     | 59.2     | 53.8     | 46.7     |
-| TBSI          | CVPR 2023     | 60.3     | 55.2     | 47.7     |
-| ViPT          | CVPR 2023     | 55.2     | 51.1     | 44.2     |
-| SDSTrack      | CVPR 2024     | 57.6     | 52.5     | 45.3     |
-| UnTrack       | CVPR 2024     | 56.5     | 51.5     | 44.7     |
-| BAT           | AAAI 2024     | 60.5     | 55.1     | 47.7     |
-| AFter         | TIP 2025      | 57.5     | 52.3     | 44.8     |
-| SUTrack       | AAAI 2025     | 57.4     | 52.5     | 45.0     |
-| CAFormer      | AAAI 2025     | 59.0     | 53.8     | 46.7     |
-| AINet         | AAAI 2025     | 61.4     | 55.7     | 48.3     |
-| NAT           | CISE 2024     | 58.1     | 52.3     | 44.8     ||
-| **SFCATrack** | **AAAI 2026** | **60.7** | **55.1** | **47.9** |
-| **PMATrack**      | **CVPR 2026** | **64.4** | **58.7** | **50.6** |
-
+| Tracker | Publication | PR ↑ | NPR ↑ | SR ↑ | FPS ↑ |
+|--------|-------------|------|-------|------|-------|
+| MANet | ICCVW 2019 | 32.9 | 26.6 | 24.1 | 1 |
+| MaCNet | Sensors 2020 | 38.4 | 30.7 | 27.0 | 0.8 |
+| CAT | ECCV 2020 | 36.3 | 29.9 | 25.3 | 20 |
+| FANet | TIV 2021 | 32.8 | 26.6 | 22.7 | 19 |
+| ADRNet | IJCV 2021 | 34.5 | 29.2 | 23.8 | 25 |
+| MANet++ | TIP 2021 | 30.1 | 23.9 | 20.3 | 25.4 |
+| APFNet | AAAI 2022 | 40.3 | 32.4 | 29.1 | 1.3 |
+| DMCNet | TNNLS 2022 | 35.1 | 27.7 | 25.7 | 2.3 |
+| ToMP | CVPR 2022 | 46.3 | 41.4 | 36.0 | 34 |
+| OSTrack | ECCV 2022 | 59.2 | 53.8 | 46.7 | 44.4 |
+| TBSI | CVPR 2023 | 60.3 | 55.2 | 47.7 | 36.2 |
+| ViPT | CVPR 2023 | 55.2 | 51.1 | 44.2 | 24.8 |
+| SDSTrack | CVPR 2024 | 57.6 | 52.5 | 45.3 | 20.9 |
+| UnTrack | CVPR 2024 | 56.5 | 51.5 | 44.7 | - |
+| BAT | AAAI 2024 | 60.5 | 55.1 | 47.7 | - |
+| GMMT | AAAI 2024 | 58.4 | 53.3 | 45.7 | - |
+| AFter | TIP 2025 | 57.5 | 52.3 | 44.8 | 23.0 |
+| SUTrack | AAAI 2025 | 57.4 | 52.5 | 45.0 | 55 |
+| CAFormer | AAAI 2025 | 59.0 | 53.8 | 46.7 | 86.3 |
+| AINet | AAAI 2025 | 61.4 | 55.7 | 48.3 | 38.1 |
+| NAT | CISE 2024 | 58.1 | 52.3 | 44.8 | 19 |
+| **SFCATrack** | **AAAI 2026** | **60.7** | **55.1** | **47.9** | - |
+| **PMATrack** | **CVPR 2026** | **64.4** | **58.7** | **50.6** | **28.0** |
 
 ---
+
+### ⭐ LUART
+
+| Tracker | Publication | PR ↑ | NPR ↑ | SR ↑ |
+|--------|-------------|------|-------|------|
+| Best previous method | - | 54.7 | 49.6 | 42.6 |
+| **SFCATrack** | **AAAI 2026** | **57.3** | **51.9** | **44.6** |
+
+---
+
 
 ## 💻 Open-source Tracker
 
