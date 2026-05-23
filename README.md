@@ -9,6 +9,8 @@
   <img src="logo.png" width="100%">
 </p>
 
+</div>
+
 <div align="center">
 
 ### 🔗 Quick Navigation
