@@ -132,7 +132,9 @@ We also provide **LasHeR-Unaligned**, a derived benchmark based on
 [LasHeR](https://github.com/BUGPLEASEOUT/LasHeR), where spatial alignment assumptions are explicitly removed to support fair evaluation of unaligned RGBT trackers.
 
 ### 📥 Download Links
-
+**LasHeR-Unaligned Dataset**  
+- Baidu Cloud: `https://pan.baidu.com/s/1OB9BbPQt16CAXwLqfc8hEA`
+- Access Code: `mmic`
 **LasHeR-Unaligned Tracking Results**  
 - Baidu Cloud: `https://pan.baidu.com/s/1kFmqX65f82d8ijtj8hV_lQ?pwd=dhjx`
 - Access Code: `dhjx`
@@ -278,5 +280,15 @@ please consider citing our AAAI 2026 paper:
   number={13},
   pages={11014--11022},
   year={2026}
+}
+
+@article{li2021lasher,
+  title={LasHeR: A large-scale high-diversity benchmark for RGBT tracking},
+  author={Li, Chenglong and Xue, Wanlin and Jia, Yaqing and Qu, Zhichen and Luo, Bin and Tang, Jin and Sun, Dengdi},
+  journal={IEEE Transactions on Image Processing},
+  volume={31},
+  pages={392--404},
+  year={2021},
+  publisher={IEEE}
 }
 ```
