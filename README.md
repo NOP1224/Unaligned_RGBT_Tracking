@@ -56,14 +56,15 @@ We will progressively release the following resources to support reproducible re
 
 - **PMATrack code** for our CVPR 2026 paper  
   **Progressive Multi-cue Alignment for Unaligned RGBT Tracking**
-- **MUART244 dataset** and corresponding tracking result files
-- **LasHeR-Unaligned result files**
-- **Unified evaluation toolkit** for unaligned RGBT tracking, built upon the standard RGBT evaluation protocol
+
 - Existing released resources:
   - [**AAAI 2026 paper**](https://github.com/NOP1224/Unaligned_RGBT_Tracking/blob/main/Unaligned_UAV_RGBT_Tracking__A_Largescale_Benchmark_and_A_Novel_Approach_AAAI_CRC.pdf)
   - [**SFCATrack**](https://github.com/Yhw-lol127/SFCATrack)
   - [**LUART dataset**](https://github.com/NOP1224/Unaligned_RGBT_Tracking/blob/main/README.md#-download-links)
   - [**LUART evaluation toolkit**](https://github.com/NOP1224/Unaligned_RGBT_Tracking/blob/main/README.md#-download-links)
+  - **Unified evaluation toolkit** for unaligned RGBT tracking, built upon the standard RGBT evaluation protocol
+  - **LasHeR-Unaligned result files**
+  - **MUART244 dataset** and corresponding tracking result files
 
 ---
 
@@ -141,7 +142,7 @@ We also provide **LasHeR-Unaligned**, a derived benchmark based on
 - Access Code: `dhjx`
 ---
 
-## 🧪 Evaluation Toolkit
+## 🧪 [Evaluation Toolkit](https://github.com/NOP1224/Unaligned_RGBT_Tracking/tree/main/eval_tracker-ua)
 
 We will release a unified evaluation toolkit for unaligned RGBT tracking based on the standard RGBT evaluation library.
 
