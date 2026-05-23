@@ -127,7 +127,7 @@ We also provide **LasHeR-Unaligned**, a derived benchmark based on
 
 ---
 
-## 🧪 Unified Evaluation Toolkit
+## 🧪 Evaluation Toolkit
 
 We will release a unified evaluation toolkit for unaligned RGBT tracking based on the standard RGBT evaluation library.
 
