@@ -15,6 +15,24 @@
 
 </div>
 
+<div align="center">
+
+### 🔗 Quick Navigation
+
+[![News](https://img.shields.io/badge/News-Updates-blue)](#-news)
+[![Release](https://img.shields.io/badge/Public-Release-green)](#-public-release)
+[![MUART244](https://img.shields.io/badge/Dataset-MUART244-red)](#-muart244-dataset)
+[![LUART](https://img.shields.io/badge/Dataset-LUART-red)](#-luart-dataset)
+[![LasHeR-UA](https://img.shields.io/badge/Dataset-LasHeR--UA-red)](#-lasher-unaligned)
+[![Evaluation](https://img.shields.io/badge/Toolkit-Evaluation-purple)](#-evaluation-toolkit)
+[![Results](https://img.shields.io/badge/Benchmark-Results-orange)](#-benchmark-results)
+[![Trackers](https://img.shields.io/badge/Open--source-Trackers-yellow)](#-open-source-trackers)
+[![Citation](https://img.shields.io/badge/Citation-BibTeX-lightgrey)](#-citation)
+
+</div>
+
+---
+
 This repository contains multiple research modules related to **multi-modal tracking**, **RGB–TIR fusion**, and **unaligned cross-modal UAV tracking**.  
 Among them, our recent work:
 
