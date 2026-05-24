@@ -158,8 +158,8 @@ The toolkit supports:
 - Unified result format for fair comparison across different unaligned RGBT datasets
 
 **Evaluation Toolkit**  
-- Baidu Cloud: `TODO`
-- Access Code: `TODO`
+- Baidu Cloud: `https://pan.baidu.com/s/1gtoEsZPTCz_CDPhuc518jg?pwd=k2hp`
+- Access Code: `k2hp`
 
 ---
 
