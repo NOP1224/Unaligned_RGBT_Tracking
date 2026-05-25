@@ -72,7 +72,7 @@ python tracking/create_default_local_file.py \
 ```
 
 ## Training
-
+#A more detailed training process will be updated after we reorganize the code.
 Edit `experiments/sfcatrack/rgbt.yaml` to set the required training stage:
 
 ```yaml
