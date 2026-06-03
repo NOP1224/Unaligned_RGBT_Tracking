@@ -290,6 +290,14 @@ If you find this repository or the LUART dataset useful for your research,
 please consider citing our AAAI 2026 paper:
 
 ```
+@inproceedings{jin2026progressive,
+    author    = {Jin, Jiandong and Li, Chenglong and Feng, Hao and Lu, Andong and Huang, Lili and Tang, Jin},
+    title     = {Progressive Multi-cue Alignment for Unaligned RGBT Tracking},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    year      = {2026},
+    pages     = {35207-35216}
+}
+
 @inproceedings{xiao2026unaligned,
   title={Unaligned UAV RGBT Tracking: A Largescale Benchmark and a Novel Approach},
   author={Xiao, Yun and Wang, Yuhang and Jin, Jiandong and Zhang, Wankang and Li, Chenglong},
