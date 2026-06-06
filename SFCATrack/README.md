@@ -128,6 +128,11 @@ Tracking results are saved to:
 RGBT_workspace/results/NotAlign/LUART/rgbt/
 ```
 
+You can also directly download our pre-trained weights in LUART for inference.
+
+[Weights Baidu Yun](https://pan.baidu.com/s/1nYFr9ywEaW34ZSMcrQHjbw?pwd=6d4j)
+**Code**: 6d4j
+
 ## Notes
 
 - `MSEE` corresponds to the image alignment branch and is implemented mainly in `moe_block.py`.
