@@ -59,7 +59,7 @@ We will progressively release the following resources to support reproducible re
 
 - Existing released resources:
   - [**AAAI 2026 paper**](https://github.com/NOP1224/Unaligned_RGBT_Tracking/blob/main/Unaligned_UAV_RGBT_Tracking__A_Largescale_Benchmark_and_A_Novel_Approach_AAAI_CRC.pdf)
-  - [**SFCATrack**](https://github.com/Yhw-lol127/SFCATrack)
+  - [**SFCATrack**](https://github.com/NOP1224/Unaligned_RGBT_Tracking/tree/main/SFCATrack)
   - [**LUART dataset**](https://github.com/NOP1224/Unaligned_RGBT_Tracking/blob/main/README.md#-download-links)
   - [**LUART evaluation toolkit**](https://github.com/NOP1224/Unaligned_RGBT_Tracking/blob/main/README.md#-download-links)
   - [**Unified evaluation toolkit**](https://github.com/NOP1224/Unaligned_RGBT_Tracking/tree/main/eval_tracker-ua) for unaligned RGBT tracking, built upon the standard RGBT evaluation protocol
@@ -279,9 +279,8 @@ The toolkit supports:
 
 ### Ealry-Aligned Tracker
 
-#### SFCATrack（AAAI 2026）
+#### 🔗 [SFCATrack（AAAI 2026）](https://github.com/NOP1224/Unaligned_RGBT_Tracking/tree/main/SFCATrack)
 
-🔗 
 
 ### Middle-Aligned Tracker
 
