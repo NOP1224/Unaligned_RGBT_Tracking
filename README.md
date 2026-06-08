@@ -284,21 +284,15 @@ The toolkit supports:
 
 ### Middle-Aligned Tracker
 
-#### PMATrack（CVPR 2026）
-
-🔗 
+#### 🔗 PMATrack（CVPR 2026）
 
 ### Post-Aligned Tracker
 
-#### ????
-
-🔗 
+#### 🔗 ????
 
 ### Efficent-Aligned Tracker
 
-#### ????
-
-🔗 
+#### 🔗 ????
 
 ---
 
