@@ -277,10 +277,29 @@ The toolkit supports:
 
 ## 💻 Open-source Tracker
 
-### SFCATrack
-Official implementation of our AAAI 2026 method:
+### Ealry-Aligned Tracker
 
-🔗 https://github.com/Yhw-lol127/SFCATrack
+#### SFCATrack（AAAI 2026）
+
+🔗 
+
+### Middle-Aligned Tracker
+
+#### PMATrack（CVPR 2026）
+
+🔗 
+
+### Post-Aligned Tracker
+
+#### ????
+
+🔗 
+
+### Efficent-Aligned Tracker
+
+#### ????
+
+🔗 
 
 ---
 
