@@ -56,6 +56,7 @@ We will progressively release the following resources to support reproducible re
 
 - **PMATrack README**
 - **SFCATrack Training Steps**
+- **Our Some New Works for UA-RGBT Tracking**
 
 - Existing released resources:
   - [**AAAI 2026 paper**](https://github.com/NOP1224/Unaligned_RGBT_Tracking/blob/main/Unaligned_UAV_RGBT_Tracking__A_Largescale_Benchmark_and_A_Novel_Approach_AAAI_CRC.pdf)
