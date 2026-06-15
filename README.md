@@ -22,7 +22,7 @@
 [![LasHeR-UA](https://img.shields.io/badge/Dataset-LasHeR--UA-red)](#-lasher-unaligned)
 [![Evaluation](https://img.shields.io/badge/Toolkit-Evaluation-purple)](#-evaluation-toolkit)
 [![Results](https://img.shields.io/badge/Benchmark-Results-orange)](#-benchmark-results)
-[![Trackers](https://img.shields.io/badge/Open--source-Trackers-yellow)](#-open-source-trackers)
+[![Trackers](https://img.shields.io/badge/Open--source-Trackers-yellow)](https://github.com/NOP1224/Unaligned_RGBT_Tracking/tree/main#-open-source-tracker)
 [![Citation](https://img.shields.io/badge/Citation-BibTeX-lightgrey)](#-citation)
 
 </div>
@@ -54,16 +54,18 @@ This repository includes more than this single paper, but LUART and SFCATrack ar
 
 We will progressively release the following resources to support reproducible research on unaligned RGBT tracking:
 
-- **PMATrack code** for our CVPR 2026 paper  
-  **Progressive Multi-cue Alignment for Unaligned RGBT Tracking**
-- **MUART244 dataset** and corresponding tracking result files
-- **LasHeR-Unaligned result files**
-- **Unified evaluation toolkit** for unaligned RGBT tracking, built upon the standard RGBT evaluation protocol
+- **PMATrack README**
+- **SFCATrack Training Steps**
+
 - Existing released resources:
   - [**AAAI 2026 paper**](https://github.com/NOP1224/Unaligned_RGBT_Tracking/blob/main/Unaligned_UAV_RGBT_Tracking__A_Largescale_Benchmark_and_A_Novel_Approach_AAAI_CRC.pdf)
-  - [**SFCATrack**](https://github.com/Yhw-lol127/SFCATrack)
+  - [**SFCATrack**](https://github.com/NOP1224/Unaligned_RGBT_Tracking/tree/main/SFCATrack)
   - [**LUART dataset**](https://github.com/NOP1224/Unaligned_RGBT_Tracking/blob/main/README.md#-download-links)
   - [**LUART evaluation toolkit**](https://github.com/NOP1224/Unaligned_RGBT_Tracking/blob/main/README.md#-download-links)
+  - [**Unified evaluation toolkit**](https://github.com/NOP1224/Unaligned_RGBT_Tracking/tree/main/eval_tracker-ua) for unaligned RGBT tracking, built upon the standard RGBT evaluation protocol
+  - **LasHeR-Unaligned result files**
+  - **MUART244 dataset** and corresponding tracking result files
+  - [**PMATrack**](https://github.com/NOP1224/Unaligned_RGBT_Tracking/tree/main/PMATrack) 
 
 ---
 
@@ -141,7 +143,7 @@ We also provide **LasHeR-Unaligned**, a derived benchmark based on
 - Access Code: `dhjx`
 ---
 
-## 🧪 Evaluation Toolkit
+## 🧪 [Evaluation Toolkit](https://github.com/NOP1224/Unaligned_RGBT_Tracking/tree/main/eval_tracker-ua)
 
 We will release a unified evaluation toolkit for unaligned RGBT tracking based on the standard RGBT evaluation library.
 
@@ -157,8 +159,8 @@ The toolkit supports:
 - Unified result format for fair comparison across different unaligned RGBT datasets
 
 **Evaluation Toolkit**  
-- Baidu Cloud: `TODO`
-- Access Code: `TODO`
+- Baidu Cloud: `https://pan.baidu.com/s/1gtoEsZPTCz_CDPhuc518jg?pwd=k2hp`
+- Access Code: `k2hp`
 
 ---
 
@@ -276,10 +278,22 @@ The toolkit supports:
 
 ## 💻 Open-source Tracker
 
-### SFCATrack
-Official implementation of our AAAI 2026 method:
+### Ealry-Aligned Tracker
 
-🔗 https://github.com/Yhw-lol127/SFCATrack
+#### 🔗 [SFCATrack（AAAI 2026）](https://github.com/NOP1224/Unaligned_RGBT_Tracking/tree/main/SFCATrack)
+
+
+### Middle-Aligned Tracker
+
+#### 🔗 PMATrack（CVPR 2026）
+
+### Post-Aligned Tracker
+
+#### 🔗 ????
+
+### Efficent-Aligned Tracker
+
+#### 🔗 ????
 
 ---
 
@@ -289,6 +303,14 @@ If you find this repository or the LUART dataset useful for your research,
 please consider citing our AAAI 2026 paper:
 
 ```
+@inproceedings{jin2026progressive,
+    author    = {Jin, Jiandong and Li, Chenglong and Feng, Hao and Lu, Andong and Huang, Lili and Tang, Jin},
+    title     = {Progressive Multi-cue Alignment for Unaligned RGBT Tracking},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    year      = {2026},
+    pages     = {35207-35216}
+}
+
 @inproceedings{xiao2026unaligned,
   title={Unaligned UAV RGBT Tracking: A Largescale Benchmark and a Novel Approach},
   author={Xiao, Yun and Wang, Yuhang and Jin, Jiandong and Zhang, Wankang and Li, Chenglong},
