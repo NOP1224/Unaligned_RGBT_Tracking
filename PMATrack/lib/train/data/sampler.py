@@ -1,0 +1,491 @@
+import pdb
+import random
+import torch.utils.data
+from lib.utils import TensorDict
+import numpy as np
+import math
+import time
+
+def no_processing(data):
+    return data
+
+
+class TrackingSampler(torch.utils.data.Dataset):
+    """ Class responsible for sampling frames from training sequences to form batches. 
+
+    The sampling is done in the following ways. First a dataset is selected at random. Next, a sequence is selected
+    from that dataset. A base frame is then sampled randomly from the sequence. Next, a set of 'train frames' and
+    'test frames' are sampled from the sequence from the range [base_frame_id - max_gap, base_frame_id]  and
+    (base_frame_id, base_frame_id + max_gap] respectively. Only the frames in which the target is visible are sampled.
+    If enough visible frames are not found, the 'max_gap' is increased gradually till enough frames are found.
+
+    The sampled frames are then passed through the input 'processing' function for the necessary processing-
+    """
+
+    def __init__(self, datasets, p_datasets, samples_per_epoch, max_gap, bias_min, bias_max,
+                 num_search_frames, num_template_frames=1, processing=no_processing, frame_sample_mode='causal',
+                 train_cls=False, pos_prob=0.5):
+        """
+        args:
+            datasets - List of datasets to be used for training
+            p_datasets - List containing the probabilities by which each dataset will be sampled
+            samples_per_epoch - Number of training samples per epoch
+            max_gap - Maximum gap, in frame numbers, between the train frames and the test frames.
+            num_search_frames - Number of search frames to sample.
+            num_template_frames - Number of template frames to sample.
+            processing - An instance of Processing class which performs the necessary processing of the data.
+            frame_sample_mode - Either 'causal' or 'interval'. If 'causal', then the test frames are sampled in a causally,
+                                otherwise randomly within the interval.
+        """
+        self.datasets = datasets
+        self.train_cls = train_cls  # whether we are training classification
+        self.pos_prob = pos_prob  # probability of sampling positive class when making classification
+
+        # If p not provided, sample uniformly from all videos
+        if p_datasets is None:
+            p_datasets = [len(d) for d in self.datasets]
+
+        # Normalize
+        p_total = sum(p_datasets)
+        self.p_datasets = [x / p_total for x in p_datasets]
+
+        self.samples_per_epoch = samples_per_epoch
+        self.max_gap = max_gap
+        self.num_search_frames = num_search_frames
+        self.num_template_frames = num_template_frames
+        self.processing = processing
+        self.frame_sample_mode = frame_sample_mode
+        
+        self.bias_min = bias_min
+        self.bias_max = bias_max
+    
+        self.rgb_width = 1920
+        self.rgb_height = 1080
+        self.tir_width = 640
+        self.tir_height = 512
+        
+        self.max_attempts = 10
+
+    def __len__(self):
+        return self.samples_per_epoch
+    
+
+    def _sample_visible_ids(self, visible, num_ids=1, min_id=None, max_id=None,
+                            allow_invisible=False, force_invisible=False):
+        """ Samples num_ids frames between min_id and max_id for which target is visible
+
+        args:
+            visible - 1d Tensor indicating whether target is visible for each frame
+            num_ids - number of frames to be samples
+            min_id - Minimum allowed frame number
+            max_id - Maximum allowed frame number
+
+        returns:
+            list - List of sampled frame numbers. None if not sufficient visible frames could be found.
+        """
+        if num_ids == 0:
+            return []
+        if min_id is None or min_id < 0:
+            min_id = 0
+        if max_id is None or max_id > len(visible):
+            max_id = len(visible)
+        # get valid ids
+        if force_invisible:
+            valid_ids = [i for i in range(min_id, max_id) if not visible[i]]
+        else:
+            if allow_invisible:
+                valid_ids = [i for i in range(min_id, max_id)]
+            else:
+                valid_ids = [i for i in range(min_id, max_id) if visible[i]]
+
+        # No visible ids
+        if len(valid_ids) == 0:
+            return None
+
+        return random.choices(valid_ids, k=num_ids)
+    # def _checkrange(self, bbox_rgb, bbox_ir, min_r, max_ir):
+    #     rgb_width = 1920
+    #     rgb_height = 1080
+    #     tir_width = 640
+    #     tir_height = 512
+    #     rgb_x, rgb_y, rgb_w, rgb_h = bbox_rgb
+    #     # 计算 RGB 中心位置
+    #     rgb_center_x = (rgb_x + rgb_w / 2) / rgb_width
+    #     rgb_center_y = (rgb_y + rgb_h / 2) / rgb_height
+
+    #     # 解析 TIR 标注信息
+    #     tir_x, tir_y, tir_w, tir_h = bbox_ir
+    #     # 计算 TIR 中心位置
+    #     tir_center_x = (tir_x + tir_w / 2) / tir_width
+    #     tir_center_y = (tir_y + tir_h / 2) / tir_height
+
+    #     # 计算相对位移
+    #     dx = (tir_center_x - rgb_center_x)* tir_width
+    #     dy = (tir_center_y - rgb_center_y)*tir_height
+    #     displacement = math.sqrt(dx ** 2 + dy ** 2)
+    #     # print("displacement:", displacement)
+    #     if displacement >= min_r and displacement < max_ir:
+    #         return True
+    #     else:
+    #         return False
+    # def _checkseqrange(self, info_dict, min_r, max_ir):
+    #     valid_count = 0
+    #     last_valid = []
+    #     for i in range(len(info_dict['bbox_rgb'])):
+    #         if self._checkrange(info_dict['bbox_rgb'][i,:], info_dict['bbox_ir'][i,:], min_r, max_ir):
+    #             valid_count += 1
+    #             last_valid.append(i)
+    #     return valid_count, last_valid
+    def _checkrange(self, bbox_rgb, bbox_ir, min_r, max_ir):
+        # 计算 RGB 中心位置
+        # bbox_rgb[0] 和 bbox_rgb[1] 分别是 RGB 边框的左上角 x 和 y 坐标
+        # bbox_rgb[2] 和 bbox_rgb[3] 分别是 RGB 边框的宽度和高度
+        # self.rgb_width 和 self.rgb_height 分别是 RGB 图像的宽度和高度
+        rgb_center_x = (bbox_rgb[0] + bbox_rgb[2] / 2) / self.rgb_width
+        rgb_center_y = (bbox_rgb[1] + bbox_rgb[3] / 2) / self.rgb_height
+
+        # 解析 TIR 标注信息
+        # 计算 TIR 中心位置
+        # bbox_ir[0] 和 bbox_ir[1] 分别是 TIR 边框的左上角 x 和 y 坐标
+        # bbox_ir[2] 和 bbox_ir[3] 分别是 TIR 边框的宽度和高度
+        # self.tir_width 和 self.tir_height 分别是 TIR 图像的宽度和高度
+        tir_center_x = (bbox_ir[0] + bbox_ir[2] / 2) / self.tir_width
+        tir_center_y = (bbox_ir[1] + bbox_ir[3] / 2) / self.tir_height
+
+        # 计算相对位移
+        # dx 是 RGB 和 TIR 中心点在 x 轴上的位移
+        # dy 是 RGB 和 TIR 中心点在 y 轴上的位移
+        dx = (tir_center_x - rgb_center_x) * self.tir_width
+        dy = (tir_center_y - rgb_center_y) * self.tir_height
+        # displacement 是 RGB 和 TIR 中心点之间的欧几里得距离
+        displacement = math.sqrt(dx ** 2 + dy ** 2)
+        # 返回位移是否在 min_r 和 max_ir 之间
+        return min_r <= displacement < max_ir
+
+    def __getitem__(self, index):
+        if self.train_cls:
+            return self.getitem_cls()
+        else:
+            return self.getitem()
+
+    def getitem(self):
+        """
+        returns:
+            TensorDict - dict containing all the data blocks
+        """
+        valid = False
+
+        while not valid:
+            # Select a dataset
+            dataset = random.choices(self.datasets, self.p_datasets)[0]
+
+            is_video_dataset = dataset.is_video_sequence()
+
+            # sample a sequence from the given dataset
+            seq_id, visible, seq_info_dict = self.sample_seq_from_dataset(dataset, is_video_dataset)
+
+
+            if is_video_dataset:
+                template_frame_ids = None
+                search_frame_ids = None
+                gap_increase = 0
+
+                if self.frame_sample_mode == 'causal':
+                    # Sample test and train frames in a causal manner, i.e. search_frame_ids > template_frame_ids
+                    while search_frame_ids is None:
+                        # print(self.num_search_frames-1,last_valid[-2])
+                        base_frame_id = self._sample_visible_ids(visible, num_ids=1, min_id=self.num_template_frames - 1,
+                                                                 max_id=len(visible) - self.num_search_frames)
+                        prev_frame_ids = self._sample_visible_ids(visible, num_ids=self.num_template_frames - 1,
+                                                                  min_id=base_frame_id[0] - self.max_gap - gap_increase,
+                                                                  max_id=base_frame_id[0])
+                        if prev_frame_ids is None:
+                            gap_increase += 5
+                            continue
+                        template_frame_ids = base_frame_id + prev_frame_ids
+                        # print('template_frame_ids:',template_frame_ids)
+                        search_frame_ids = self._sample_visible_ids(visible, min_id=template_frame_ids[0] + 1,
+                                                                  max_id=template_frame_ids[0] + self.max_gap + gap_increase,
+                                                                  num_ids=self.num_search_frames)
+                        # print('search_frame_ids:', search_frame_ids)
+                        # Increase gap until a frame is found
+                        gap_increase += 5
+
+                elif self.frame_sample_mode == "trident" or self.frame_sample_mode == "trident_pro":
+                    template_frame_ids, search_frame_ids = self.get_frame_ids_trident(visible)
+                elif self.frame_sample_mode == "stark":
+                    template_frame_ids, search_frame_ids = self.get_frame_ids_stark(visible, seq_info_dict["valid"])
+                else:
+                    raise ValueError("Illegal frame sample mode")
+            else:
+                # In case of image dataset, just repeat the image to generate synthetic video
+                template_frame_ids = [1] * self.num_template_frames
+                search_frame_ids = [1] * self.num_search_frames
+            try:
+                if dataset.name not in ['Mydataset',
+                                        'LasHeR_unregist_trainingSet_framelist',
+                                        'LasHeR_unregist_testingSet_framelist',
+                                        "SynMU_Trainset"]:
+                    template_frames, template_anno, meta_obj_train = dataset.get_frames(seq_id, template_frame_ids, seq_info_dict)
+                    search_frames, search_anno, meta_obj_test = dataset.get_frames(seq_id, search_frame_ids, seq_info_dict)
+
+                    data = TensorDict({'template_images': template_frames,
+                                    'template_anno': template_anno['bbox'],
+                                    'search_images': search_frames,
+                                    'search_anno': search_anno['bbox'],
+                                    'dataset': dataset.get_name(),
+                                    'test_class': meta_obj_test.get('object_class_name')})
+                    # make data augmentation
+
+                    data = self.processing(data)
+
+
+                    # check whether data is valid
+                    valid = data['valid']
+                else:
+                    template_frames_rgb, tempalte_frames_ir, tempalte_frames_rgb_prior,template_frames_ir_prior, template_anno, template_anno_prior, meta_obj_train, seq_name, sampled_fid, h_rgb, w_rgb = dataset.get_frames(seq_id, template_frame_ids, seq_info_dict)
+                    search_frames_rgb, search_frames_ir, search_frames_rgb_prior, search_frames_ir_prior, search_anno, search_anno_prior, meta_obj_test, seq_name, sampled_fid, h_rgb, w_rgb = dataset.get_frames(seq_id, search_frame_ids, seq_info_dict)
+   
+                    data = TensorDict({'template_images_rgb': template_frames_rgb,
+                                        'template_anno_rgb': template_anno['bbox_rgb'],
+                                        'search_images_rgb': search_frames_rgb,
+                                        'search_anno_rgb': search_anno['bbox_rgb'],
+                                        'template_images_ir': tempalte_frames_ir,
+                                        'template_anno_ir': template_anno['bbox_ir'],
+                                        'template_images': None,
+                                        'search_images': None,
+                                        # 'search_images_prior': None,
+                                        'search_anno': None,
+                                        "template_anno":  None,
+                                        "seq_id":seq_id,
+                                        "seq_name":seq_name,
+                                        "sampled_fid": sampled_fid,
+                                        "search_frame_ids":search_frame_ids[0],
+                                        'H_RGB': h_rgb, 
+                                        'W_RGB': w_rgb,
+                                        'oringin_rgb_anno': search_anno['bbox_rgb'],
+                                        'oringin_ir_anno_bias': search_anno['bbox_ir_bias'],
+                                        'dataset': dataset.get_name(),
+                                        'test_class': meta_obj_test.get('object_class_name')})
+                    # make data augmentation
+                    data = self.processing(data, Align_mode = False)
+                    valid = data['valid']
+                    # import os 
+                    # import cv2
+                    # save_dir = './debug_search_img_full2'
+                    # os.makedirs(save_dir, exist_ok=True)
+                    # if valid:
+                    #     for idx in range(len(search_frames_rgb)):    
+                    #         # 假设你取第一个帧
+                    #         frame = search_frames_rgb[idx]  # H x W x 6
+                    #         H, W, C = frame.shape
+
+                    #         # 分离 RGB 和 TIR
+                    #         rgb_img = frame[:, :, :3]  # H x W x 3
+                    #         tir_img = frame[:, :, 3:6]  # H x W x 3
+                    #         # 将 uint8 转成 BGR 用于 cv2.imshow / cv2.imwrite
+                    #         rgb_img_bgr = cv2.cvtColor(rgb_img, cv2.COLOR_RGB2BGR)
+                    #         tir_img_bgr = cv2.applyColorMap(tir_img, cv2.COLORMAP_HOT) 
+                    #         # bbox 信息
+                    #         bbox_rgb = search_anno['bbox_rgb'][0]        # [x1, y1, w, h] in RGB original coords
+                    #         bbox_ir_bias = search_anno['bbox_ir_bias'][0]  # [x1, y1, w, h] in IR original coords (已经偏移到RGB坐标系)
+                    #         # 转成 int
+                    #         bbox_rgb = [int(x) for x in bbox_rgb]
+                    #         bbox_ir_bias = [int(x) for x in bbox_ir_bias]
+
+                    #         # 在图上画框
+                    #         rgb_img_bgr = cv2.rectangle(rgb_img_bgr,
+                    #                                     (bbox_rgb[0], bbox_rgb[1]),
+                    #                                     (bbox_rgb[0]+bbox_rgb[2], bbox_rgb[1]+bbox_rgb[3]),
+                    #                                     (0, 0, 255), 2)  # 绿色：RGB bbox
+
+                    #         tir_img_bgr = cv2.rectangle(tir_img_bgr,
+                    #                                     (bbox_ir_bias[0], bbox_ir_bias[1]),
+                    #                                     (bbox_ir_bias[0]+bbox_ir_bias[2], bbox_ir_bias[1]+bbox_ir_bias[3]),
+                    #                                     (0, 255, 0), 2)  # 红色：TIR bbox
+                            
+                    #         overlay_full = cv2.addWeighted(rgb_img_bgr, 0.6, tir_img_bgr, 0.4, 0)
+                    #         # 保存可视化
+                    #         cv2.imwrite(os.path.join(save_dir, f'{seq_name}_{search_frame_ids[0]}_rgb_bbox.png'), rgb_img_bgr)
+                    #         cv2.imwrite(os.path.join(save_dir, f'{seq_name}_{search_frame_ids[0]}_tir_bbox.png'), tir_img_bgr)
+                    #         cv2.imwrite(os.path.join(save_dir, f'{seq_name}_{search_frame_ids[0]}_overlay.png'), overlay_full)
+            except:
+                valid = False
+        return data
+
+    def getitem_cls(self):
+        # get data for classification
+        """
+        args:
+            index (int): Index (Ignored since we sample randomly)
+            aux (bool): whether the current data is for auxiliary use (e.g. copy-and-paste)
+
+        returns:
+            TensorDict - dict containing all the data blocks
+        """
+        valid = False
+        label = None
+        while not valid:
+            # Select a dataset
+            dataset = random.choices(self.datasets, self.p_datasets)[0]
+
+            is_video_dataset = dataset.is_video_sequence()
+
+            # sample a sequence from the given dataset
+            seq_id, visible, seq_info_dict = self.sample_seq_from_dataset(dataset, is_video_dataset)
+            # sample template and search frame ids
+            if is_video_dataset:
+                if self.frame_sample_mode in ["trident", "trident_pro"]:
+                    template_frame_ids, search_frame_ids = self.get_frame_ids_trident(visible)
+                elif self.frame_sample_mode == "stark":
+                    template_frame_ids, search_frame_ids = self.get_frame_ids_stark(visible, seq_info_dict["valid"])
+                else:
+                    raise ValueError("illegal frame sample mode")
+            else:
+                # In case of image dataset, just repeat the image to generate synthetic video
+                template_frame_ids = [1] * self.num_template_frames
+                search_frame_ids = [1] * self.num_search_frames
+            try:
+                # "try" is used to handle trackingnet data failure
+                # get images and bounding boxes (for templates)
+                template_frames, template_anno, meta_obj_train = dataset.get_frames(seq_id, template_frame_ids,
+                                                                                    seq_info_dict)
+                H, W, _ = template_frames[0].shape
+                template_masks = template_anno['mask'] if 'mask' in template_anno else [torch.zeros(
+                    (H, W))] * self.num_template_frames
+                # get images and bounding boxes (for searches)
+                # positive samples
+                if random.random() < self.pos_prob:
+                    label = torch.ones(1,)
+                    search_frames, search_anno, meta_obj_test = dataset.get_frames(seq_id, search_frame_ids, seq_info_dict)
+                    search_masks = search_anno['mask'] if 'mask' in search_anno else [torch.zeros(
+                        (H, W))] * self.num_search_frames
+                # negative samples
+                else:
+                    label = torch.zeros(1,)
+                    if is_video_dataset:
+                        search_frame_ids = self._sample_visible_ids(visible, num_ids=1, force_invisible=True)
+                        if search_frame_ids is None:
+                            search_frames, search_anno, meta_obj_test = self.get_one_search()
+                        else:
+                            search_frames, search_anno, meta_obj_test = dataset.get_frames(seq_id, search_frame_ids,
+                                                                                           seq_info_dict)
+                            search_anno["bbox"] = [self.get_center_box(H, W)]
+                    else:
+                        search_frames, search_anno, meta_obj_test = self.get_one_search()
+                    H, W, _ = search_frames[0].shape
+                    search_masks = search_anno['mask'] if 'mask' in search_anno else [torch.zeros(
+                        (H, W))] * self.num_search_frames
+
+                data = TensorDict({'template_images': template_frames,
+                                   'template_anno': template_anno['bbox'],
+                                   'template_masks': template_masks,
+                                   'search_images': search_frames,
+                                   'search_anno': search_anno['bbox'],
+                                   'search_masks': search_masks,
+                                   'dataset': dataset.get_name(),
+                                   'test_class': meta_obj_test.get('object_class_name')})
+
+                # make data augmentation
+                data = self.processing(data)
+                # add classification label
+                data["label"] = label
+                # check whether data is valid
+                valid = data['valid']
+            except:
+                valid = False
+
+        return data
+
+    def get_center_box(self, H, W, ratio=1/8):
+        cx, cy, w, h = W/2, H/2, W * ratio, H * ratio
+        return torch.tensor([int(cx-w/2), int(cy-h/2), int(w), int(h)])
+
+    def sample_seq_from_dataset(self, dataset, is_video_dataset):
+
+        # Sample a sequence with enough visible frames
+        enough_visible_frames = False
+        while not enough_visible_frames:
+            # Sample a sequence
+            seq_id = random.randint(0, dataset.get_num_sequences() - 1)
+
+            # Sample frames
+            seq_info_dict = dataset.get_sequence_info(seq_id)
+            visible = seq_info_dict['visible']
+
+            enough_visible_frames = visible.type(torch.int64).sum().item() > 2 * (
+                    self.num_search_frames + self.num_template_frames) and len(visible) >= 20
+
+            enough_visible_frames = enough_visible_frames or not is_video_dataset
+        return seq_id, visible, seq_info_dict
+
+    def get_one_search(self):
+        # Select a dataset
+        dataset = random.choices(self.datasets, self.p_datasets)[0]
+
+        is_video_dataset = dataset.is_video_sequence()
+        # sample a sequence
+        seq_id, visible, seq_info_dict = self.sample_seq_from_dataset(dataset, is_video_dataset)
+        # sample a frame
+        if is_video_dataset:
+            if self.frame_sample_mode == "stark":
+                search_frame_ids = self._sample_visible_ids(seq_info_dict["valid"], num_ids=1)
+            else:
+                search_frame_ids = self._sample_visible_ids(visible, num_ids=1, allow_invisible=True)
+        else:
+            search_frame_ids = [1]
+        # get the image, bounding box and other info
+        search_frames, search_anno, meta_obj_test = dataset.get_frames(seq_id, search_frame_ids, seq_info_dict)
+
+        return search_frames, search_anno, meta_obj_test
+
+    def get_frame_ids_trident(self, visible):
+        # get template and search ids in a 'trident' manner
+        template_frame_ids_extra = []
+        while None in template_frame_ids_extra or len(template_frame_ids_extra) == 0:
+            template_frame_ids_extra = []
+            # first randomly sample two frames from a video
+            template_frame_id1 = self._sample_visible_ids(visible, num_ids=1)  # the initial template id
+            search_frame_ids = self._sample_visible_ids(visible, num_ids=1)  # the search region id
+            # get the dynamic template id
+            for max_gap in self.max_gap:
+                if template_frame_id1[0] >= search_frame_ids[0]:
+                    min_id, max_id = search_frame_ids[0], search_frame_ids[0] + max_gap
+                else:
+                    min_id, max_id = search_frame_ids[0] - max_gap, search_frame_ids[0]
+                if self.frame_sample_mode == "trident_pro":
+                    f_id = self._sample_visible_ids(visible, num_ids=1, min_id=min_id, max_id=max_id,
+                                                    allow_invisible=True)
+                else:
+                    f_id = self._sample_visible_ids(visible, num_ids=1, min_id=min_id, max_id=max_id)
+                if f_id is None:
+                    template_frame_ids_extra += [None]
+                else:
+                    template_frame_ids_extra += f_id
+
+        template_frame_ids = template_frame_id1 + template_frame_ids_extra
+        return template_frame_ids, search_frame_ids
+
+    def get_frame_ids_stark(self, visible, valid):
+        # get template and search ids in a 'stark' manner
+        template_frame_ids_extra = []
+        while None in template_frame_ids_extra or len(template_frame_ids_extra) == 0:
+            template_frame_ids_extra = []
+            # first randomly sample two frames from a video
+            template_frame_id1 = self._sample_visible_ids(visible, num_ids=1)  # the initial template id
+            search_frame_ids = self._sample_visible_ids(visible, num_ids=1)  # the search region id
+            # get the dynamic template id
+            for max_gap in self.max_gap:
+                if template_frame_id1[0] >= search_frame_ids[0]:
+                    min_id, max_id = search_frame_ids[0], search_frame_ids[0] + max_gap
+                else:
+                    min_id, max_id = search_frame_ids[0] - max_gap, search_frame_ids[0]
+                """we require the frame to be valid but not necessary visible"""
+                f_id = self._sample_visible_ids(valid, num_ids=1, min_id=min_id, max_id=max_id)
+                if f_id is None:
+                    template_frame_ids_extra += [None]
+                else:
+                    template_frame_ids_extra += f_id
+
+        template_frame_ids = template_frame_id1 + template_frame_ids_extra
+        return template_frame_ids, search_frame_ids
