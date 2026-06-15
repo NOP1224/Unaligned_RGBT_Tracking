@@ -76,6 +76,10 @@ We will progressively release the following resources to support reproducible re
 **MUART244** is a high-quality multi-platform benchmark for unaligned RGBT tracking.  
 Different from existing aligned RGBT datasets, MUART244 preserves the original spatial misalignment between RGB and TIR modalities without manual pre-alignment, cropping, or rescaling.
 
+<p align="center">
+  <img src="assets/MUART244_Examples.png" width="100%">
+</p>
+
 It includes:
 
 - **244** RGBT video pairs
@@ -89,6 +93,11 @@ It includes:
 - Original heterogeneous resolutions:
   - RGB: from **1600×1200** to **3840×2160**
   - TIR: from **640×512** to **1280×1024**
+
+<p align="center">
+  <img src="assets/MUART244_statistic.jpg" width="100%">
+</p>
+
 
 MUART244 provides a realistic benchmark for evaluating unaligned RGBT tracking under large spatial offsets, scale variations, multi-platform viewpoints, and modality-specific challenges.
 
@@ -107,6 +116,10 @@ MUART244 provides a realistic benchmark for evaluating unaligned RGBT tracking u
 ## 📦 LUART Dataset  
 ### Unaligned UAV RGBT Tracking Dataset
 
+<p align="center">
+  <img src="assets/LUART.jpg" width="100%">
+</p>
+
 **LUART** is the first large-scale benchmark focusing on *unaligned* UAV visible–thermal tracking.  
 It includes:
 
@@ -117,6 +130,10 @@ It includes:
 - Original UAV resolutions:
   - RGB: **1920×1080**
   - TIR: **640×512**
+
+<p align="center">
+  <img src="assets/LUART_statistic.jpg" width="100%">
+</p>
 
 ### 📥 Download Links
 
