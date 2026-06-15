@@ -286,7 +286,7 @@ The toolkit supports:
 
 ### Middle-Aligned Tracker
 
-#### 🔗 PMATrack（CVPR 2026）
+#### 🔗 [PMATrack（CVPR 2026）](https://github.com/NOP1224/Unaligned_RGBT_Tracking/tree/main/PMATrack)
 
 ### Post-Aligned Tracker
 
