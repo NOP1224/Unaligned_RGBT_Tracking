@@ -5,7 +5,7 @@ SFCATrack is an unaligned UAV RGBT tracking framework for visible-thermal tracki
 ## Method Overview
 
 <p align="center">
-  <img src="SFCATrack/assets/SFCATrack.jpg" width="100%">
+  <img src="assets/SFCATrack.jpg" width="100%">
 </p>
 
 
