@@ -1,5 +1,5 @@
 <h1 align="center">
-<span>Unaligned RGBT Tracking Project
+<span>Unaligned RGBT Tracking Project (UA-RGBT Tracking)
 </span>
 </h1>
 
