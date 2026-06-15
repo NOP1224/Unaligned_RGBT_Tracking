@@ -54,8 +54,8 @@ This repository includes more than this single paper, but LUART and SFCATrack ar
 
 We will progressively release the following resources to support reproducible research on unaligned RGBT tracking:
 
-- **PMATrack code** for our CVPR 2026 paper  
-  **Progressive Multi-cue Alignment for Unaligned RGBT Tracking**
+- **PMATrack README**
+- **SFCATrack Training Steps**
 
 - Existing released resources:
   - [**AAAI 2026 paper**](https://github.com/NOP1224/Unaligned_RGBT_Tracking/blob/main/Unaligned_UAV_RGBT_Tracking__A_Largescale_Benchmark_and_A_Novel_Approach_AAAI_CRC.pdf)
@@ -65,6 +65,7 @@ We will progressively release the following resources to support reproducible re
   - [**Unified evaluation toolkit**](https://github.com/NOP1224/Unaligned_RGBT_Tracking/tree/main/eval_tracker-ua) for unaligned RGBT tracking, built upon the standard RGBT evaluation protocol
   - **LasHeR-Unaligned result files**
   - **MUART244 dataset** and corresponding tracking result files
+  - [**PMATrack**](https://github.com/NOP1224/Unaligned_RGBT_Tracking/tree/main/PMATrack) 
 
 ---
 
