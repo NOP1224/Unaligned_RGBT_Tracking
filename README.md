@@ -95,7 +95,7 @@ It includes:
   - TIR: from **640×512** to **1280×1024**
 
 <p align="center">
-  <img src="assets/MUART244_statistic.jpg" width="100%">
+  <img src="assets/MUART244_statistic.jpg" width="60%">
 </p>
 
 
@@ -117,7 +117,7 @@ MUART244 provides a realistic benchmark for evaluating unaligned RGBT tracking u
 ### Unaligned UAV RGBT Tracking Dataset
 
 <p align="center">
-  <img src="assets/LUART.jpg" width="100%">
+  <img src="assets/LUART.jpg" width="60%">
 </p>
 
 **LUART** is the first large-scale benchmark focusing on *unaligned* UAV visible–thermal tracking.  
