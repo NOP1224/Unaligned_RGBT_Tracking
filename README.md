@@ -141,6 +141,11 @@ It includes:
 - Baidu Cloud:  `https://pan.baidu.com/s/168vWYtxPqoagds8WcPuJUA` 
 - Access Code: `er4r`
 
+**Error Sequences Repair package-2026.06.16**
+**Note**: Some files may be missing or corrupted after decompression. Please download the **repair package** to replace them. If other sequences encounter problems, please contact me.
+- Baidu Cloud: `https://pan.baidu.com/s/1L6WzTJCpwLnjTyuXNUBL2Q?pwd=gd4y`
+- Access Code: `gd4y`
+
 **LUART Tracking Results**  
 - Baidu Cloud: `https://pan.baidu.com/s/1AhY2rOL8PdPXL0MrEaR1Rw?pwd=pi2i`
 - Access Code: `pi2i`
