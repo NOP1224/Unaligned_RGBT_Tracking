@@ -38,8 +38,6 @@ Among them, our recent work:
 > **“Unaligned UAV RGBT Tracking: A Largescale Benchmark and A Novel Approach”**  
 > has been **accepted by AAAI 2026** 🎉.
 
-This repository includes more than this single paper, but LUART and SFCATrack are important components released here.
-
 ---
 
 ## 🔔 News
