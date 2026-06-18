@@ -23,7 +23,7 @@
 
 [![Evaluation](https://img.shields.io/badge/Toolkit-Evaluation-purple)](#-evaluation-toolkit)
 [![Results](https://img.shields.io/badge/Benchmark-Results-orange)](#-benchmark-results)
-[![Trackers](https://img.shields.io/badge/Open--source-Trackers-yellow)](https://github.com/NOP1224/Unaligned_RGBT_Tracking/tree/main#-open-source-tracker)
+[![Trackers](https://img.shields.io/badge/Open--source-Trackers-yellow)](#-open-source-trackers)
 [![Citation](https://img.shields.io/badge/Citation-BibTeX-lightgrey)](#-citation)
 
 </div>
