@@ -40,14 +40,6 @@ Among them, our recent work:
 
 ---
 
-## 🔔 News
-- **2026.02** – Our **Progressive Multi-cue Alignment for Unaligned RGBT Tracking** is accepted by **CVPR 2026**.  
-- **2025.11** – Our **Unaligned UAV RGBT Tracking: A Largescale Benchmark and A Novel Approach** is accepted by **AAAI 2026**.  
-- **2025.11** – **LUART** (1.02M dual-modality frames) dataset is available for download.  
-- Additional modules and trackers will be released soon.
-
----
-
 ## 📢 Public Release
 
 We will progressively release the following resources to support reproducible research on **unaligned RGBT tracking**.
