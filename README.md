@@ -50,22 +50,26 @@ Among them, our recent work:
 
 ## 📢 Public Release
 
+We will progressively release the following resources to support reproducible research on **unaligned RGBT tracking**.
+
 ### 🚧 Coming Soon
 
-- **PMATrack README**
-- **SFCATrack Training Steps**
-- **Our Some New Works for UA-RGBT Tracking**
+* [ ] **PMATrack README**
+* [ ] **SFCATrack Training Steps**
+* [ ] **New Works for UA-RGBT Tracking**
+* [ ] **Standard Baseline (OSTrack-/LoRAT-Style) with unaligned data augmentation for UA-RGBT Tracking**
 
 ### ✅ Released Resources
 
-  - [**AAAI 2026 paper**](https://github.com/NOP1224/Unaligned_RGBT_Tracking/blob/main/Unaligned_UAV_RGBT_Tracking__A_Largescale_Benchmark_and_A_Novel_Approach_AAAI_CRC.pdf)
-  - [**SFCATrack**](https://github.com/NOP1224/Unaligned_RGBT_Tracking/tree/main/SFCATrack)
-  - [**LUART dataset**](https://github.com/NOP1224/Unaligned_RGBT_Tracking/blob/main/README.md#-download-links)
-  - [**LUART evaluation toolkit**](https://github.com/NOP1224/Unaligned_RGBT_Tracking/blob/main/README.md#-download-links)
-  - [**Unified evaluation toolkit**](https://github.com/NOP1224/Unaligned_RGBT_Tracking/tree/main/eval_tracker-ua) for unaligned RGBT tracking, built upon the standard RGBT evaluation protocol
-  - **LasHeR-Unaligned result files**
-  - **MUART244 dataset** and corresponding tracking result files
-  - [**PMATrack**](https://github.com/NOP1224/Unaligned_RGBT_Tracking/tree/main/PMATrack) 
+* [x] [**AAAI 2026 Paper**](https://github.com/NOP1224/Unaligned_RGBT_Tracking/blob/main/Unaligned_UAV_RGBT_Tracking__A_Largescale_Benchmark_and_A_Novel_Approach_AAAI_CRC.pdf)
+* [x] [**SFCATrack**](https://github.com/NOP1224/Unaligned_RGBT_Tracking/tree/main/SFCATrack)
+* [x] [**LUART Dataset**](https://github.com/NOP1224/Unaligned_RGBT_Tracking/blob/main/README.md#-download-links)
+* [x] [**LUART Evaluation Toolkit**](https://github.com/NOP1224/Unaligned_RGBT_Tracking/blob/main/README.md#-download-links)
+* [x] [**Unified Evaluation Toolkit**](https://github.com/NOP1224/Unaligned_RGBT_Tracking/tree/main/eval_tracker-ua) for unaligned RGBT tracking, built upon the standard RGBT evaluation protocol
+* [x] **LasHeR-Unaligned Result Files**
+* [x] **MUART244 Dataset** and corresponding tracking result files
+* [x] [**PMATrack**](https://github.com/NOP1224/Unaligned_RGBT_Tracking/tree/main/PMATrack)
+
 
 ---
 
