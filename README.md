@@ -296,25 +296,44 @@ The toolkit supports:
 
 ---
 
+## 💻 Open-source Trackers
 
-## 💻 Open-source Tracker
+We organize open-source trackers according to their alignment strategy.
 
-### Ealry-Aligned Tracker
+### 1. Early-stage Alignment
 
-#### 🔗 [SFCATrack（AAAI 2026）](https://github.com/NOP1224/Unaligned_RGBT_Tracking/tree/main/SFCATrack)
+Trackers that perform cross-modal alignment before or at the early feature extraction stage.
 
+| Tracker     | Venue     | Code                                                                           | Status         |
+| ----------- | --------- | ------------------------------------------------------------------------------ | -------------- |
+| SFCATrack   | AAAI 2026 | [Link](https://github.com/NOP1224/Unaligned_RGBT_Tracking/tree/main/SFCATrack) | ✅ Released     |
+| Coming soon | —         | —                                                                              | 🚧 Coming Soon |
 
-### Middle-Aligned Tracker
+### 2. Middle-stage Alignment
 
-#### 🔗 [PMATrack（CVPR 2026）](https://github.com/NOP1224/Unaligned_RGBT_Tracking/tree/main/PMATrack)
+Trackers that perform alignment during feature interaction, fusion, or representation learning.
 
-### Post-Aligned Tracker
+| Tracker     | Venue     | Code                                                                          | Status         |
+| ----------- | --------- | ----------------------------------------------------------------------------- | -------------- |
+| PMATrack    | CVPR 2026 | [Link](https://github.com/NOP1224/Unaligned_RGBT_Tracking/tree/main/PMATrack) | ✅ Released     |
+| Coming soon | —         | —                                                                             | 🚧 Coming Soon |
 
-#### 🔗 ????
+### 3. Post-stage Alignment
 
-### Efficent-Aligned Tracker
+Trackers that perform alignment after prediction or use post-processing-based alignment.
 
-#### 🔗 ????
+| Tracker     | Venue | Code | Status         |
+| ----------- | ----- | ---- | -------------- |
+| Coming soon | —     | —    | 🚧 Coming Soon |
+
+### 4. Efficient Alignment
+
+Trackers designed for efficient unaligned RGBT tracking with reduced computation or faster inference.
+
+| Tracker     | Venue | Code | Status         |
+| ----------- | ----- | ---- | -------------- |
+| Coming soon | —     | —    | 🚧 Coming Soon |
+
 
 ---
 
