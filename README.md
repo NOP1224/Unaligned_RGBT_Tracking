@@ -15,7 +15,6 @@
 
 ### 🔗 Quick Navigation
 
-[![News](https://img.shields.io/badge/News-Updates-blue)](#-news)
 [![Release](https://img.shields.io/badge/Public-Release-green)](#-public-release)
 
 [![MUART244](https://img.shields.io/badge/Dataset-MUART244-red)](#-muart244-dataset)
