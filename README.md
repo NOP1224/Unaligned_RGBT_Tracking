@@ -50,13 +50,14 @@ Among them, our recent work:
 
 ## 📢 Public Release
 
-We will progressively release the following resources to support reproducible research on unaligned RGBT tracking:
+### 🚧 Coming Soon
 
 - **PMATrack README**
 - **SFCATrack Training Steps**
 - **Our Some New Works for UA-RGBT Tracking**
 
-- Existing released resources:
+### ✅ Released Resources
+
   - [**AAAI 2026 paper**](https://github.com/NOP1224/Unaligned_RGBT_Tracking/blob/main/Unaligned_UAV_RGBT_Tracking__A_Largescale_Benchmark_and_A_Novel_Approach_AAAI_CRC.pdf)
   - [**SFCATrack**](https://github.com/NOP1224/Unaligned_RGBT_Tracking/tree/main/SFCATrack)
   - [**LUART dataset**](https://github.com/NOP1224/Unaligned_RGBT_Tracking/blob/main/README.md#-download-links)
