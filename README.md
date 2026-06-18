@@ -138,9 +138,16 @@ It includes:
 - Access Code: `er4r`
 
 **Error Sequences Repair package-2026.06.16**
+
 **Note**: Some files may be missing or corrupted after decompression. Please download the **repair package** to replace them. If other sequences encounter problems, please contact me.
 - Baidu Cloud: `https://pan.baidu.com/s/1L6WzTJCpwLnjTyuXNUBL2Q?pwd=gd4y`
 - Access Code: `gd4y`
+
+**Error Sequences Repair package-2026.06.18**
+
+**Note**: Some files may be corrupted after decompression.
+- Baidu Cloud: `xxx`
+- Access Code: `xxx`
 
 **LUART Tracking Results**  
 - Baidu Cloud: `https://pan.baidu.com/s/1AhY2rOL8PdPXL0MrEaR1Rw?pwd=pi2i`
