@@ -334,6 +334,12 @@ Trackers designed for efficient unaligned RGBT tracking with reduced computation
 | ----------- | ----- | ---- | -------------- |
 | Coming soon | —     | —    | 🚧 Coming Soon |
 
+### 5. Alignment-free Tracker
+
+| Tracker     | Venue | Code | Status         |
+| ----------- | ----- | ---- | -------------- |
+| Coming soon | —     | —    | 🚧 Coming Soon |
+
 
 ---
 
