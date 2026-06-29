@@ -91,7 +91,7 @@ Common stages:
 | Stage | Purpose |
 |---|---|
 | `att_moe_phase1` | Train shared expert and offset prediction head |
-| `att_moe_phase2` | Train scale-specific experts sequentially. For each expert, set `TRAIN.EXPERT_INDEX`, `TRAIN.BIAS_MIN`, `TRAIN.BIAS_MAX`, and load the previous expert checkpoint through `MODEL.PRETRAIN_FILE`. |
+| `att_moe_phase2` | Train scale-specific experts sequentially. Each expert is initialized from the previous expert checkpoint. |
 | `att_moe_phase3` | Train router for adaptive expert selection |
 | `att_base` | Train tracking backbone, CMAF, and tracking head |
 
@@ -111,6 +111,10 @@ TRAIN:
   EXPERT_INDEX: 0
   BIAS_MIN: 0
   BIAS_MAX: 70
+```
+
+For each expert, update `TRAIN.EXPERT_INDEX`, `TRAIN.BIAS_MIN`, `TRAIN.BIAS_MAX`, and `MODEL.PRETRAIN_FILE`.
+
 Run training:
 
 ```bash
