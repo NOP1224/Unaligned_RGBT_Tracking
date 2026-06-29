@@ -91,10 +91,26 @@ Common stages:
 | Stage | Purpose |
 |---|---|
 | `att_moe_phase1` | Train shared expert and offset prediction head |
-| `att_moe_phase2` | Train scale-specific expert; set `TRAIN.EXPERT_INDEX` |
+| `att_moe_phase2` | Train scale-specific experts sequentially. For each expert, set `TRAIN.EXPERT_INDEX`, `TRAIN.BIAS_MIN`, `TRAIN.BIAS_MAX`, and load the previous expert checkpoint through `MODEL.PRETRAIN_FILE`. |
 | `att_moe_phase3` | Train router for adaptive expert selection |
 | `att_base` | Train tracking backbone, CMAF, and tracking head |
 
+### Phase 2: Scale-specific Expert Training
+
+In `att_moe_phase2`, experts are trained sequentially. The next expert is initialized from the checkpoint of the previous expert.
+
+Before training each expert, modify the following fields in `experiments/sfcatrack/rgbt.yaml`:
+
+```yaml
+MODEL:
+  PRETRAIN_FILE: "/path/to/previous/checkpoint.pth.tar"
+
+TRAIN:
+  PROMPT:
+    TYPE: att_moe_phase2
+  EXPERT_INDEX: 0
+  BIAS_MIN: 0
+  BIAS_MAX: 70
 Run training:
 
 ```bash
