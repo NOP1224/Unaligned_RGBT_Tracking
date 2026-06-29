@@ -48,7 +48,6 @@ We will progressively release the following resources to support reproducible re
 ### 🚧 Coming Soon
 
 * [ ] **PMATrack README**
-* [ ] **SFCATrack Training Steps**
 * [ ] **New Works for UA-RGBT Tracking**
 * [ ] **Standard Baseline (OSTrack-/LoRAT-Style) with unaligned data augmentation for UA-RGBT Tracking**
 
@@ -62,6 +61,7 @@ We will progressively release the following resources to support reproducible re
 * [x] **LasHeR-Unaligned Result Files**
 * [x] **MUART244 Dataset** and corresponding tracking result files
 * [x] [**PMATrack**](https://github.com/NOP1224/Unaligned_RGBT_Tracking/tree/main/PMATrack)
+* [x] 2026.6.29 Update [**SFCATrack Training Steps**](https://github.com/NOP1224/Unaligned_RGBT_Tracking/tree/main/SFCATrack)
 
 
 ---
