@@ -104,7 +104,6 @@ MUART244 provides a realistic benchmark for evaluating unaligned RGBT tracking u
 | **MUART244 Dataset**          | [`Download`](https://pan.baidu.com/s/14D22dNDu6pNSKrO-6keNCw?pwd=am6y) | `am6y`      |
 | **MUART244 Tracking Results** | [`Download`](https://pan.baidu.com/s/1qdqPz0RKIsW3v_FJafACUw?pwd=4prb) | `4prb`      |
 
-
 ---
 
 ## 📦 LUART Dataset  
@@ -145,6 +144,7 @@ It includes:
 
 * **2026.06.16**: Partial sequences may contain missing files or corrupted images.
 * **2026.06.18**: `Car_153`–`Car_164` may encounter decompression errors.
+* **2026.07.09**: If you cannot find "Truck_5," it is a naming error; please rename "Truck" to "Truck_5.".
 
 If you encounter problems with other sequences, please contact us.
 
