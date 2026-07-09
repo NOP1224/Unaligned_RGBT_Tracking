@@ -144,7 +144,7 @@ It includes:
 
 * **2026.06.16**: Partial sequences may contain missing files or corrupted images.
 * **2026.06.18**: `Car_153`–`Car_164` may encounter decompression errors.
-* **2026.07.09**: If you cannot find "Truck_5," it is a naming error; please rename "Truck" to "Truck_5.".
+* **2026.07.09**: If you cannot find `Truck_5`, it is a naming error; please rename `Truck` to `Truck_5`.
 
 If you encounter problems with other sequences, please contact us.
 
