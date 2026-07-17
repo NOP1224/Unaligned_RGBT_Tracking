@@ -661,7 +661,7 @@ class DetailExpert(nn.Module):
 
         for blk in self.global_blocks:
             x = blk(x)   
-        x = torch.cat([feat1, feat2], dim=1).view(B, 2*D, side, side)    
+        x = x.view(B, 2*D, side, side)    
         post = self.regressor(x)
         dx_res, dy_res, dlog_sx_res, dlog_sy_res, conf = post.unbind(dim=-1)
 
