@@ -324,7 +324,7 @@ Trackers that perform alignment after prediction or use post-processing-based al
 
 | Tracker     | Venue | Code | Status         |
 | ----------- | ----- | ---- | -------------- |
-| Coming soon | —     | —    | 🚧 Coming Soon |
+| PHGTrack | —     | —    | 🚧 Coming Soon |
 
 ### 4. Efficient Alignment
 
@@ -332,7 +332,7 @@ Trackers designed for efficient unaligned RGBT tracking with reduced computation
 
 | Tracker     | Venue | Code | Status         |
 | ----------- | ----- | ---- | -------------- |
-| Coming soon | —     | —    | 🚧 Coming Soon |
+| WorldUAT | —     | —    | 🚧 Coming Soon |
 
 ### 5. Alignment-free Tracker
 
