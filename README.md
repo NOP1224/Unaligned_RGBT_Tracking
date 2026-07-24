@@ -300,7 +300,7 @@ The toolkit supports:
 
 We organize open-source trackers according to their alignment strategy.
 
-### 1. Early-stage Alignment
+### 1. Early-stage Alignment Tracker
 
 Trackers that perform cross-modal alignment before or at the early feature extraction stage.
 
@@ -309,7 +309,7 @@ Trackers that perform cross-modal alignment before or at the early feature extra
 | SFCATrack   | AAAI 2026 | [Link](https://github.com/NOP1224/Unaligned_RGBT_Tracking/tree/main/SFCATrack) | ✅ Released     |
 | Coming soon | —         | —                                                                              | 🚧 Coming Soon |
 
-### 2. Middle-stage Alignment
+### 2. Middle-stage Alignment Tracker
 
 Trackers that perform alignment during feature interaction, fusion, or representation learning.
 
@@ -318,7 +318,7 @@ Trackers that perform alignment during feature interaction, fusion, or represent
 | PMATrack    | CVPR 2026 | [Link](https://github.com/NOP1224/Unaligned_RGBT_Tracking/tree/main/PMATrack) | ✅ Released     |
 | Coming soon | —         | —                                                                             | 🚧 Coming Soon |
 
-### 3. Post-stage Alignment
+### 3. Post-stage Alignment Tracker
 
 Trackers that perform alignment after prediction or use post-processing-based alignment.
 
@@ -326,13 +326,20 @@ Trackers that perform alignment after prediction or use post-processing-based al
 | ----------- | ----- | ---- | -------------- |
 | PHGTrack | —     | —    | 🚧 Coming Soon |
 
-### 4. Efficient Alignment
+### 4. Efficient Alignment Tracker
 
 Trackers designed for efficient unaligned RGBT tracking with reduced computation or faster inference.
 
 | Tracker     | Venue | Code | Status         |
 | ----------- | ----- | ---- | -------------- |
 | WorldUAT | —     | —    | 🚧 Coming Soon |
+
+### 5. Reliable Alignment Tracker
+
+| Tracker     | Venue | Code | Status         |
+| ----------- | ----- | ---- | -------------- |
+| Coming soon | —     | —    | 🚧 Coming Soon |
+
 
 ### 5. Alignment-free Tracker
 
