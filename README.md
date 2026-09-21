@@ -316,6 +316,7 @@ Trackers that perform alignment during feature interaction, fusion, or represent
 | Tracker     | Venue     | Code                                                                          | Status         |
 | ----------- | --------- | ----------------------------------------------------------------------------- | -------------- |
 | PMATrack    | CVPR 2026 | [Link](https://github.com/NOP1224/Unaligned_RGBT_Tracking/tree/main/PMATrack) | ✅ Released     |
+| PMRL(PMATrack Extension)    | Submitted | [Link](https://github.com/NOP1224/Unaligned_RGBT_Tracking/tree/main/PMRL) | ✅ Released     |
 | Coming soon | —         | —                                                                             | 🚧 Coming Soon |
 
 ### 3. Post-stage Alignment Tracker
