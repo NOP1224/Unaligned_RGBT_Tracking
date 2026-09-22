@@ -39,7 +39,7 @@ Among them, our recent work:
 >
 > **PMRL**, the journal extension of PMATrack, introduces progressive multi-cue
 > relation learning for unified cross-modal alignment and fusion. The extended
-> manuscript is currently **under review**, and the cleaned implementation is
+> manuscript is currently **under review**, and the implementation is
 > now available in [PMRL](./PMRL).
 > 
 > **“Unaligned UAV RGBT Tracking: A Largescale Benchmark and A Novel Approach”**  
