@@ -14,12 +14,6 @@ PMRL: Progressive Multi-Cue Relation Learning
 
 </div>
 
-> [!IMPORTANT]
-> **PMRL is the journal extension of PMATrack (CVPR 2026).**
-> The extended manuscript is currently under review. This directory releases
-> the cleaned, paper-consistent implementation of the final method; code used
-> only for ablation studies has been removed.
-
 ## Framework
 
 <div align="center">
