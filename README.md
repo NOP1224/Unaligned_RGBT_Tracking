@@ -16,6 +16,7 @@
 ### 🔗 Quick Navigation
 
 [![Release](https://img.shields.io/badge/Public-Release-green)](#-public-release)
+[![PMRL](https://img.shields.io/badge/PMRL-PMATrack%20Extension-orange)](#-pmrl-pmatrack-extension-under-review)
 
 [![MUART244](https://img.shields.io/badge/Dataset-MUART244-red)](#-muart244-dataset)
 [![LUART](https://img.shields.io/badge/Dataset-LUART-red)](#-luart-dataset)
@@ -35,6 +36,11 @@ Among them, our recent work:
 
 > **“Progressive Multi-cue Alignment for Unaligned RGBT Tracking”**  
 > has been **accepted by CVPR 2026** 🎉.
+>
+> **PMRL**, the journal extension of PMATrack, introduces progressive multi-cue
+> relation learning for unified cross-modal alignment and fusion. The extended
+> manuscript is currently **under review**, and the cleaned implementation is
+> now available in [PMRL](./PMRL).
 > 
 > **“Unaligned UAV RGBT Tracking: A Largescale Benchmark and A Novel Approach”**  
 > has been **accepted by AAAI 2026** 🎉.
@@ -47,7 +53,7 @@ We will progressively release the following resources to support reproducible re
 
 ### 🚧 Coming Soon
 
-* [ ] **PMATrack README**
+* [ ] **PMRL paper, pretrained models, and complete results** (to be released when permitted by the review process)
 * [ ] **New Works for UA-RGBT Tracking**
 * [ ] **Standard Baseline (OSTrack-/LoRAT-Style) with unaligned data augmentation for UA-RGBT Tracking**
 
@@ -61,8 +67,33 @@ We will progressively release the following resources to support reproducible re
 * [x] **LasHeR-Unaligned Result Files**
 * [x] **MUART244 Dataset** and corresponding tracking result files
 * [x] [**PMATrack**](https://github.com/NOP1224/Unaligned_RGBT_Tracking/tree/main/PMATrack)
+* [x] [**PMRL**](https://github.com/NOP1224/Unaligned_RGBT_Tracking/tree/main/PMRL) — PMATrack journal extension; cleaned code released, manuscript under review
 * [x] 2026.6.29 Update [**SFCATrack Training Steps**](https://github.com/NOP1224/Unaligned_RGBT_Tracking/tree/main/SFCATrack)
 
+
+---
+
+## 🔬 PMRL: PMATrack Extension (Under Review)
+
+[**PMRL**](./PMRL) is the journal extension of PMATrack. It reformulates
+alignment and fusion as a shared cross-modal relation learning problem and is
+currently under review.
+
+Its main extensions are:
+
+- **Unified relation modeling:** the same RGB–TIR relation supports geometric
+  decoding and complementary feature aggregation.
+- **Progressive relation learning:** center localization, scale transformation,
+  and global refinement progressively reduce the correspondence search space.
+- **Adaptive multi-cue estimation:** target-semantic, local-structure, and
+  fine-grained appearance evidence guide reliability-aware unbalanced optimal
+  transport.
+- **Relation-guided tracking:** retained-mass feature gating and relation
+  verification improve fusion robustness and online alignment updates.
+
+The cleaned implementation, training/testing instructions, framework-figure
+placeholder, and a more detailed method overview are provided in the
+[PMRL README](./PMRL/README.md).
 
 ---
 
@@ -316,7 +347,7 @@ Trackers that perform alignment during feature interaction, fusion, or represent
 | Tracker     | Venue     | Code                                                                          | Status         |
 | ----------- | --------- | ----------------------------------------------------------------------------- | -------------- |
 | PMATrack    | CVPR 2026 | [Link](https://github.com/NOP1224/Unaligned_RGBT_Tracking/tree/main/PMATrack) | ✅ Released     |
-| PMRL(PMATrack Extension)    | Submitted | [Link](https://github.com/NOP1224/Unaligned_RGBT_Tracking/tree/main/PMRL) | ✅ Released     |
+| **PMRL (PMATrack Extension)** | **Under Review** | [Link](https://github.com/NOP1224/Unaligned_RGBT_Tracking/tree/main/PMRL) | ✅ Code Released |
 | Coming soon | —         | —                                                                             | 🚧 Coming Soon |
 
 ### 3. Post-stage Alignment Tracker
@@ -385,3 +416,4 @@ please consider citing our AAAI 2026 paper:
   publisher={IEEE}
 }
 ```
+
