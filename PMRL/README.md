@@ -185,12 +185,6 @@ dataset branches, progress reporting, and result layout.
 Dataset download links and the unified evaluation toolkit are available in the
 [root project README](../README.md).
 
-## Checkpoint Compatibility
-
-The final PMRL path is loaded strictly for all parameters it uses. When a
-checkpoint produced by the pre-cleanup development tree is evaluated, surplus
-weights from removed ablation or legacy modules are ignored and reported.
-
 ## Publication Status
 
 The PMRL manuscript is currently **under review**. The paper link, pretrained
