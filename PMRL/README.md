@@ -171,6 +171,30 @@ The checkpoint is expected at:
 The evaluator retains the original multi-process PMATrack testing workflow,
 dataset branches, progress reporting, and result layout.
 
+## Performance
+
+### Tracking Accuracy
+
+| Tracker | LasHeR-Unaligned PR/NPR/SR | LUART PR/NPR/SR | MUART244 PR/NPR/SR | FPS |
+| --- | --- | --- | --- | ---: |
+| PMATrack (CVPR 2026) | 64.4 / 58.7 / 50.6 | 60.5 / 55.8 / 47.0 | 62.7 / 55.9 / 45.8 | 28.0 |
+| **PMRL (Under Review)** | **71.5 / 66.1 / 55.4** | **65.3 / 59.5 / 50.1** | **70.6 / 61.0 / 49.6** | **20.4** |
+
+PR, NPR, and SR are reported as percentages. The MUART244 model is trained on
+LasHeR-Unaligned and evaluated without fine-tuning, following the PMATrack
+protocol.
+
+### Model Complexity
+
+| Tracker | Parameters (M) ↓ | FLOPs (G) ↓ | FPS ↑ |
+| --- | ---: | ---: | ---: |
+| PMATrack (CVPR 2026) | 237.5 | 72.6 | 28.0 |
+| **PMRL (Under Review)** | **147.5** | **71.0** | **20.4** |
+
+PMRL reduces the parameter count from 237.5M to 147.5M and FLOPs from 72.6G
+to 71.0G while substantially improving tracking accuracy on all three
+benchmarks.
+
 ## Supported Data
 
 | Dataset | Training | Evaluation |

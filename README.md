@@ -91,6 +91,10 @@ Its main extensions are:
 - **Relation-guided tracking:** retained-mass feature gating and relation
   verification improve fusion robustness and online alignment updates.
 
+**PMRL (Under Review)** achieves **71.5/66.1/55.4** PR/NPR/SR on
+LasHeR-Unaligned, **65.3/59.5/50.1** on LUART, and **70.6/61.0/49.6** on
+MUART244, with an end-to-end speed of **20.4 FPS**.
+
 The cleaned implementation, training/testing instructions, framework-figure
 placeholder, and a more detailed method overview are provided in the
 [PMRL README](./PMRL/README.md).
@@ -251,6 +255,7 @@ The toolkit supports:
 | STTrack | AAAI 2025 | - | - | - | - | - | - | 53.6 | 49.6 | 42.2 |
 | **SFCATrack** | **AAAI 2026** | - | - | - | **60.7** | **55.1** | **47.9** | **57.3** | **51.9** | **44.6** |
 | **PMATrack** | **CVPR 2026** | **62.7** | **55.9** | **45.8** | **64.4** | **58.7** | **50.6** | - | - | - |
+| **PMRL (Under Review)** | **Under Review** | **70.6** | **61.0** | **49.6** | **71.5** | **66.1** | **55.4** | **65.3** | **59.5** | **50.1** |
 
 
 ---
@@ -271,6 +276,7 @@ The toolkit supports:
 | CAFormer | AAAI 2025 | 46.5 | 41.9 | 34.3 |
 | AINet | AAAI 2025 | 57.3 | 50.4 | 41.1 |
 | **PMATrack** | **CVPR 2026** | **62.7** | **55.9** | **45.8** |
+| **PMRL (Under Review)** | **Under Review** | **70.6** | **61.0** | **49.6** |
 
 ---
 
@@ -301,6 +307,7 @@ The toolkit supports:
 | NAT | CISE 2024 | 58.1 | 52.3 | 44.8 | 19 |
 | **SFCATrack** | **AAAI 2026** | **60.7** | **55.1** | **47.9** | - |
 | **PMATrack** | **CVPR 2026** | **64.4** | **58.7** | **50.6** | **28.0** |
+| **PMRL (Under Review)** | **Under Review** | **71.5** | **66.1** | **55.4** | **20.4** |
 
 ---
 
@@ -324,6 +331,7 @@ The toolkit supports:
 | Baseline (Single-modal) | ECCV 2022 | 45.4 | 41.7 | 35.6 |
 | Baseline (Multi-modal) | ECCV 2022 | 48.6 | 45.3 | 38.3 |
 | **SFCATrack** | **AAAI 2026** | **57.3** | **51.9** | **44.6** |
+| **PMRL (Under Review)** | **Under Review** | **65.3** | **59.5** | **50.1** |
 
 ---
 
