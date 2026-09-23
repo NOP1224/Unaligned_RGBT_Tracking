@@ -22,11 +22,6 @@ PMRL: Progressive Multi-Cue Relation Learning
 
 <div align="center">
 
-**Framework figure placeholder**
-
-Place the framework image at `assets/pmrl_framework.png`, then replace this
-placeholder with the following image block:
-
 <p align="center">
   <img src="assets/frameworkv3.jpg" width="100%">
 </p>
