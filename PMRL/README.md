@@ -1,10 +1,9 @@
 <h1 align="center">
 PMRL: Progressive Multi-Cue Relation Learning
-```html
+
 <p align="center">
   <img src="assets/firstv4.jpg" width="100%">
 </p>
-```
 </h1>
 
 <p align="center">
