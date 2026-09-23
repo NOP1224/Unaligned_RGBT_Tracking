@@ -1,5 +1,10 @@
 <h1 align="center">
 PMRL: Progressive Multi-Cue Relation Learning
+```html
+<p align="center">
+  <img src="assets/firstv4.jpg" width="100%">
+</p>
+```
 </h1>
 
 <p align="center">
@@ -25,7 +30,7 @@ placeholder with the following image block:
 
 ```html
 <p align="center">
-  <img src="assets/pmrl_framework.png" width="100%">
+  <img src="assets/frameworkv3.jpg" width="100%">
 </p>
 ```
 
