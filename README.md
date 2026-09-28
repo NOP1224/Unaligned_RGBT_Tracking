@@ -349,7 +349,7 @@ Trackers that perform cross-modal alignment before or at the early feature extra
 | Tracker     | Venue     | End-to-End | Code                                                                           | Status         |
 | ----------- | --------- | ---------- | ------------------------------------------------------------------------------ | -------------- |
 | SFCATrack   | AAAI 2026 | ❌ Multi-stage | [Link](https://github.com/NOP1224/Unaligned_RGBT_Tracking/tree/main/SFCATrack) | ✅ Released     |
-| Coming soon | —         | ❌ Multi-stage | —                                                                              | 🚧 Coming Soon |
+| Coming soon | —         | — | —                                                                              | 🚧 Coming Soon |
 
 ### 2. Middle-stage Alignment Tracker
 
@@ -358,8 +358,8 @@ Trackers that perform alignment during feature interaction, fusion, or represent
 | Tracker     | Venue     | End-to-End | Code                                                                          | Status         |
 | ----------- | --------- | ---------- | ----------------------------------------------------------------------------- | -------------- |
 | PMATrack    | CVPR 2026 | ❌ Multi-stage | [Link](https://github.com/NOP1224/Unaligned_RGBT_Tracking/tree/main/PMATrack) | ✅ Released     |
-| **⭐ PMRL (PMATrack Extension)** | **Under Review** | **✅ End-to-End** | [Link](https://github.com/NOP1224/Unaligned_RGBT_Tracking/tree/main/PMRL) | **✅ Code Released** |
-| Coming soon | —         | ❌ Multi-stage | —                                                                             | 🚧 Coming Soon |
+|  PMRL (PMATrack Extension) | **Under Review** | **✅ End-to-End** | [Link](https://github.com/NOP1224/Unaligned_RGBT_Tracking/tree/main/PMRL) | **✅ Code Released** |
+| Coming soon | —         | — | —                                                                             | 🚧 Coming Soon |
 
 ### 3. Post-stage Alignment Tracker
 
@@ -377,20 +377,20 @@ Trackers designed for efficient unaligned RGBT tracking with reduced computation
 
 | Tracker     | Venue | End-to-End | Code | Status         |
 | ----------- | ----- | ---------- | ---- | -------------- |
-| WorldUAT | —     | ❌ Multi-stage | —    | 🚧 Coming Soon |
+| Coming soon | —     | — | —    | 🚧 Coming Soon |
 
 ### 5. Reliable Alignment Tracker
 
 | Tracker     | Venue | End-to-End | Code | Status         |
 | ----------- | ----- | ---------- | ---- | -------------- |
-| Coming soon | —     | ❌ Multi-stage | —    | 🚧 Coming Soon |
+| Coming soon | —     | — | —    | 🚧 Coming Soon |
 
 
 ### 5. Alignment-free Tracker
 
 | Tracker     | Venue | End-to-End | Code | Status         |
 | ----------- | ----- | ---------- | ---- | -------------- |
-| Coming soon | —     | ❌ Multi-stage | —    | 🚧 Coming Soon |
+| Coming soon | —     | — | —    | 🚧 Coming Soon |
 
 
 ---
