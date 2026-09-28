@@ -55,7 +55,6 @@ We will progressively release the following resources to support reproducible re
 
 * [ ] **PMRL paper, pretrained models, and complete results** (to be released when permitted by the review process)
 * [ ] **PHGTrack** — a **LoRAT-based post-stage alignment tracker** for UA-RGBT tracking (coming soon)
-* [ ] **New Works for UA-RGBT Tracking**
 * [ ] **Standard Baseline (OSTrack-/LoRAT-Style) with unaligned data augmentation for UA-RGBT Tracking**
 
 ### ✅ Released Resources
