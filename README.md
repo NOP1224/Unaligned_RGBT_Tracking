@@ -337,26 +337,29 @@ The toolkit supports:
 
 ## 💻 Open-source Trackers
 
-We organize open-source trackers according to their alignment strategy.
+We organize open-source trackers according to their alignment strategy and indicate whether each method is trained and optimized **end-to-end**.
+
+> ⭐ **PMRL is currently our only end-to-end UA-RGBT tracker.**  
+> The other trackers follow **multi-stage** alignment–tracking pipelines.
 
 ### 1. Early-stage Alignment Tracker
 
 Trackers that perform cross-modal alignment before or at the early feature extraction stage.
 
-| Tracker     | Venue     | Code                                                                           | Status         |
-| ----------- | --------- | ------------------------------------------------------------------------------ | -------------- |
-| SFCATrack   | AAAI 2026 | [Link](https://github.com/NOP1224/Unaligned_RGBT_Tracking/tree/main/SFCATrack) | ✅ Released     |
-| Coming soon | —         | —                                                                              | 🚧 Coming Soon |
+| Tracker     | Venue     | End-to-End | Code                                                                           | Status         |
+| ----------- | --------- | ---------- | ------------------------------------------------------------------------------ | -------------- |
+| SFCATrack   | AAAI 2026 | ❌ Multi-stage | [Link](https://github.com/NOP1224/Unaligned_RGBT_Tracking/tree/main/SFCATrack) | ✅ Released     |
+| Coming soon | —         | ❌ Multi-stage | —                                                                              | 🚧 Coming Soon |
 
 ### 2. Middle-stage Alignment Tracker
 
 Trackers that perform alignment during feature interaction, fusion, or representation learning.
 
-| Tracker     | Venue     | Code                                                                          | Status         |
-| ----------- | --------- | ----------------------------------------------------------------------------- | -------------- |
-| PMATrack    | CVPR 2026 | [Link](https://github.com/NOP1224/Unaligned_RGBT_Tracking/tree/main/PMATrack) | ✅ Released     |
-| **PMRL (PMATrack Extension)** | **Under Review** | [Link](https://github.com/NOP1224/Unaligned_RGBT_Tracking/tree/main/PMRL) | ✅ Code Released |
-| Coming soon | —         | —                                                                             | 🚧 Coming Soon |
+| Tracker     | Venue     | End-to-End | Code                                                                          | Status         |
+| ----------- | --------- | ---------- | ----------------------------------------------------------------------------- | -------------- |
+| PMATrack    | CVPR 2026 | ❌ Multi-stage | [Link](https://github.com/NOP1224/Unaligned_RGBT_Tracking/tree/main/PMATrack) | ✅ Released     |
+| **⭐ PMRL (PMATrack Extension)** | **Under Review** | **✅ End-to-End** | [Link](https://github.com/NOP1224/Unaligned_RGBT_Tracking/tree/main/PMRL) | **✅ Code Released** |
+| Coming soon | —         | ❌ Multi-stage | —                                                                             | 🚧 Coming Soon |
 
 ### 3. Post-stage Alignment Tracker
 
@@ -364,30 +367,30 @@ Trackers that defer cross-modal alignment to the late stage of the tracking pipe
 
 **PHGTrack** is our upcoming **LoRAT-based post-stage alignment tracker** for unaligned RGBT tracking. The implementation and detailed method description will be released soon.
 
-| Tracker  | Backbone | Venue | Code | Status         |
-| -------- | -------- | ----- | ---- | -------------- |
-| PHGTrack | LoRAT    | —     | —    | 🚧 Coming Soon |
+| Tracker  | Backbone | Venue | End-to-End | Code | Status         |
+| -------- | -------- | ----- | ---------- | ---- | -------------- |
+| PHGTrack | LoRAT    | —     | ❌ Multi-stage | —    | 🚧 Coming Soon |
 
 ### 4. Efficient Alignment Tracker
 
 Trackers designed for efficient unaligned RGBT tracking with reduced computation or faster inference.
 
-| Tracker     | Venue | Code | Status         |
-| ----------- | ----- | ---- | -------------- |
-| WorldUAT | —     | —    | 🚧 Coming Soon |
+| Tracker     | Venue | End-to-End | Code | Status         |
+| ----------- | ----- | ---------- | ---- | -------------- |
+| WorldUAT | —     | ❌ Multi-stage | —    | 🚧 Coming Soon |
 
 ### 5. Reliable Alignment Tracker
 
-| Tracker     | Venue | Code | Status         |
-| ----------- | ----- | ---- | -------------- |
-| Coming soon | —     | —    | 🚧 Coming Soon |
+| Tracker     | Venue | End-to-End | Code | Status         |
+| ----------- | ----- | ---------- | ---- | -------------- |
+| Coming soon | —     | ❌ Multi-stage | —    | 🚧 Coming Soon |
 
 
 ### 5. Alignment-free Tracker
 
-| Tracker     | Venue | Code | Status         |
-| ----------- | ----- | ---- | -------------- |
-| Coming soon | —     | —    | 🚧 Coming Soon |
+| Tracker     | Venue | End-to-End | Code | Status         |
+| ----------- | ----- | ---------- | ---- | -------------- |
+| Coming soon | —     | ❌ Multi-stage | —    | 🚧 Coming Soon |
 
 
 ---
