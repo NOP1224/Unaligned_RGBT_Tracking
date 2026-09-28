@@ -54,6 +54,7 @@ We will progressively release the following resources to support reproducible re
 ### 🚧 Coming Soon
 
 * [ ] **PMRL paper, pretrained models, and complete results** (to be released when permitted by the review process)
+* [ ] **PHGTrack** — a **LoRAT-based post-stage alignment tracker** for UA-RGBT tracking (coming soon)
 * [ ] **New Works for UA-RGBT Tracking**
 * [ ] **Standard Baseline (OSTrack-/LoRAT-Style) with unaligned data augmentation for UA-RGBT Tracking**
 
@@ -360,11 +361,13 @@ Trackers that perform alignment during feature interaction, fusion, or represent
 
 ### 3. Post-stage Alignment Tracker
 
-Trackers that perform alignment after prediction or use post-processing-based alignment.
+Trackers that defer cross-modal alignment to the late stage of the tracking pipeline rather than aligning modalities before or during feature interaction.
 
-| Tracker     | Venue | Code | Status         |
-| ----------- | ----- | ---- | -------------- |
-| PHGTrack | —     | —    | 🚧 Coming Soon |
+**PHGTrack** is our upcoming **LoRAT-based post-stage alignment tracker** for unaligned RGBT tracking. The implementation and detailed method description will be released soon.
+
+| Tracker  | Backbone | Venue | Code | Status         |
+| -------- | -------- | ----- | ---- | -------------- |
+| PHGTrack | LoRAT    | —     | —    | 🚧 Coming Soon |
 
 ### 4. Efficient Alignment Tracker
 
